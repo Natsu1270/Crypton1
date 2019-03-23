@@ -27,5 +27,6 @@ namespace Crypton1
             Application.Run(new Form1());
         }
         enum type { DES, RSA, XXX, HASH };
+        
     }
 }

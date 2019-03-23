@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security;
+using System.Security.Cryptography;
+using System.IO;
+using System.Xml;
 
 namespace Crypton1
 {
@@ -20,6 +24,7 @@ namespace Crypton1
         }
 
         Point lastClick;
+        String typeCryp = "";
         public void setLbType(String type)
         {
             this.lbType.Text = type;
@@ -100,10 +105,10 @@ namespace Crypton1
 
         public void disableCreatekey(bool t)
         {
-            this.p.Visible = t;
-            this.q.Visible = t;
-            this.pInput.Visible = t;
-            this.qInput.Visible = t;
+            //this.m.Visible = t;
+            //this.e.Visible = t;
+            //this.pInput.Visible = t;
+            //this.eOutput.Visible = t;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -120,36 +125,62 @@ namespace Crypton1
         {
             btnEncrypt.BackColor = System.Drawing.Color.Red;
             btnDecrypt.BackColor = System.Drawing.Color.FromArgb(23, 9, 34);
+            typeCryp = btnEncrypt.Text.ToString();
+
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             btnDecrypt.BackColor = System.Drawing.Color.Red;
             btnEncrypt.BackColor = System.Drawing.Color.FromArgb(23, 9, 34);
-
+            typeCryp = btnDecrypt.Text.ToString();
         }
 
         private void btnCreateKey_Click(object sender, EventArgs e)
         {
-            this.disableCreatekey(true);
-            textGen.Visible = false;
+            
         }
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            textGen.Visible = true;
-            this.disableCreatekey(false);
+            
         }
 
         private void btnOpenKey_Click(object sender, EventArgs e)
         {
-            this.disableCreatekey(false);
-            textGen.Visible = false;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string strfilename = openFileDialog1.FileName;
                 fileResult.Text = strfilename;
             }
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            if (lbType.Text.ToString() == "RSA")
+            {
+                if (typeCryp == "Encrypt")
+                {
+                    RSAEncrypt(fileResult.Text, txtAddress.Text);
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+        public void RSAEncrypt(string keyFileName, string plainFileName)
+
+        {
+            // Get public key
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(File.ReadAllText(keyFileName));
+            XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
+            this.mOutput.Text = xnList.InnerText;
+            xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
+            eOutput.Text = xnList.InnerText;
+
+
         }
     }
 }

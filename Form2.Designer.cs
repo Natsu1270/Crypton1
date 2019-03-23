@@ -37,7 +37,6 @@
             this.lbType = new System.Windows.Forms.Label();
             this.btnInput = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCreateKey = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnEncrypt = new System.Windows.Forms.Button();
@@ -45,12 +44,11 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.fileResult = new System.Windows.Forms.Label();
-            this.textGen = new System.Windows.Forms.TextBox();
-            this.pInput = new System.Windows.Forms.TextBox();
-            this.q = new System.Windows.Forms.Label();
-            this.p = new System.Windows.Forms.Label();
-            this.qInput = new System.Windows.Forms.TextBox();
+            this.e = new System.Windows.Forms.Label();
+            this.m = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.Label();
+            this.eOutput = new System.Windows.Forms.TextBox();
+            this.mOutput = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +159,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
             this.panel2.Controls.Add(this.btnBack);
-            this.panel2.Controls.Add(this.btnCreateKey);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btnGenerate);
             this.panel2.Controls.Add(this.btnInput);
@@ -173,21 +170,6 @@
             this.panel2.Size = new System.Drawing.Size(234, 530);
             this.panel2.TabIndex = 7;
             // 
-            // btnCreateKey
-            // 
-            this.btnCreateKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.btnCreateKey.FlatAppearance.BorderSize = 2;
-            this.btnCreateKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateKey.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateKey.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCreateKey.Location = new System.Drawing.Point(50, 215);
-            this.btnCreateKey.Name = "btnCreateKey";
-            this.btnCreateKey.Size = new System.Drawing.Size(134, 36);
-            this.btnCreateKey.TabIndex = 5;
-            this.btnCreateKey.Text = "Create Key";
-            this.btnCreateKey.UseVisualStyleBackColor = false;
-            this.btnCreateKey.Click += new System.EventHandler(this.btnCreateKey_Click);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
@@ -195,7 +177,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(50, 351);
+            this.button2.Location = new System.Drawing.Point(50, 295);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 36);
             this.button2.TabIndex = 5;
@@ -210,7 +192,7 @@
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerate.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGenerate.Location = new System.Drawing.Point(50, 280);
+            this.btnGenerate.Location = new System.Drawing.Point(50, 224);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(134, 36);
             this.btnGenerate.TabIndex = 5;
@@ -276,70 +258,40 @@
             this.btnRun.TabIndex = 11;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = false;
-            this.btnRun.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // fileResult
             // 
             this.fileResult.AutoSize = true;
             this.fileResult.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileResult.Location = new System.Drawing.Point(279, 355);
+            this.fileResult.Location = new System.Drawing.Point(275, 302);
             this.fileResult.Name = "fileResult";
             this.fileResult.Size = new System.Drawing.Size(0, 29);
             this.fileResult.TabIndex = 14;
             // 
-            // textGen
+            // e
             // 
-            this.textGen.BackColor = System.Drawing.SystemColors.Window;
-            this.textGen.Location = new System.Drawing.Point(278, 280);
-            this.textGen.Multiline = true;
-            this.textGen.Name = "textGen";
-            this.textGen.Size = new System.Drawing.Size(621, 36);
-            this.textGen.TabIndex = 6;
-            this.textGen.Visible = false;
+            this.e.AutoSize = true;
+            this.e.BackColor = System.Drawing.Color.Transparent;
+            this.e.Font = new System.Drawing.Font("Roboto", 18F);
+            this.e.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.e.Location = new System.Drawing.Point(601, 224);
+            this.e.Name = "e";
+            this.e.Size = new System.Drawing.Size(26, 29);
+            this.e.TabIndex = 12;
+            this.e.Text = "e";
             // 
-            // pInput
+            // m
             // 
-            this.pInput.Location = new System.Drawing.Point(316, 215);
-            this.pInput.Multiline = true;
-            this.pInput.Name = "pInput";
-            this.pInput.Size = new System.Drawing.Size(158, 36);
-            this.pInput.TabIndex = 13;
-            this.pInput.Visible = false;
-            // 
-            // q
-            // 
-            this.q.AutoSize = true;
-            this.q.BackColor = System.Drawing.Color.Transparent;
-            this.q.Font = new System.Drawing.Font("Roboto", 18F);
-            this.q.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.q.Location = new System.Drawing.Point(694, 216);
-            this.q.Name = "q";
-            this.q.Size = new System.Drawing.Size(27, 29);
-            this.q.TabIndex = 12;
-            this.q.Text = "q";
-            this.q.Visible = false;
-            // 
-            // p
-            // 
-            this.p.AutoSize = true;
-            this.p.BackColor = System.Drawing.Color.Transparent;
-            this.p.Font = new System.Drawing.Font("Roboto", 18F);
-            this.p.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.p.Location = new System.Drawing.Point(281, 215);
-            this.p.Name = "p";
-            this.p.Size = new System.Drawing.Size(27, 29);
-            this.p.TabIndex = 12;
-            this.p.Text = "p";
-            this.p.Visible = false;
-            // 
-            // qInput
-            // 
-            this.qInput.Location = new System.Drawing.Point(734, 215);
-            this.qInput.Multiline = true;
-            this.qInput.Name = "qInput";
-            this.qInput.Size = new System.Drawing.Size(165, 36);
-            this.qInput.TabIndex = 13;
-            this.qInput.Visible = false;
+            this.m.AutoSize = true;
+            this.m.BackColor = System.Drawing.Color.Transparent;
+            this.m.Font = new System.Drawing.Font("Roboto", 18F);
+            this.m.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.m.Location = new System.Drawing.Point(275, 224);
+            this.m.Name = "m";
+            this.m.Size = new System.Drawing.Size(34, 29);
+            this.m.TabIndex = 12;
+            this.m.Text = "m";
             // 
             // txtAddress
             // 
@@ -351,6 +303,22 @@
             this.txtAddress.TabIndex = 15;
             this.txtAddress.Text = "label2";
             // 
+            // eOutput
+            // 
+            this.eOutput.Location = new System.Drawing.Point(633, 224);
+            this.eOutput.Multiline = true;
+            this.eOutput.Name = "eOutput";
+            this.eOutput.Size = new System.Drawing.Size(239, 36);
+            this.eOutput.TabIndex = 16;
+            // 
+            // mOutput
+            // 
+            this.mOutput.Location = new System.Drawing.Point(315, 224);
+            this.mOutput.Multiline = true;
+            this.mOutput.Name = "mOutput";
+            this.mOutput.Size = new System.Drawing.Size(239, 40);
+            this.mOutput.TabIndex = 17;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,13 +326,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 530);
+            this.Controls.Add(this.mOutput);
+            this.Controls.Add(this.eOutput);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.textGen);
-            this.Controls.Add(this.qInput);
-            this.Controls.Add(this.p);
-            this.Controls.Add(this.q);
+            this.Controls.Add(this.m);
+            this.Controls.Add(this.e);
             this.Controls.Add(this.fileResult);
-            this.Controls.Add(this.pInput);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDecrypt);
@@ -400,15 +367,13 @@
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnCreateKey;
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label fileResult;
-        private System.Windows.Forms.TextBox textGen;
-        private System.Windows.Forms.TextBox pInput;
-        private System.Windows.Forms.Label q;
-        private System.Windows.Forms.Label p;
-        private System.Windows.Forms.TextBox qInput;
+        private System.Windows.Forms.Label e;
+        private System.Windows.Forms.Label m;
         private System.Windows.Forms.Label txtAddress;
+        private System.Windows.Forms.TextBox eOutput;
+        private System.Windows.Forms.TextBox mOutput;
     }
 }

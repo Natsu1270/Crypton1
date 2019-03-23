@@ -1,6 +1,6 @@
 ﻿namespace Crypton1
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btnExit = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDES = new System.Windows.Forms.Button();
-            this.btnRSA = new System.Windows.Forms.Button();
-            this.btnXXX = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbType = new System.Windows.Forms.Label();
+            this.btnInput = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnExit.FlatAppearance.BorderSize = 2;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(399, 474);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(107, 34);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel1
             // 
@@ -64,8 +49,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(909, 61);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(893, 61);
+            this.panel1.TabIndex = 2;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -114,84 +99,92 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CRYPTO";
             // 
-            // btnDES
+            // btnBack
             // 
-            this.btnDES.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnDES.FlatAppearance.BorderSize = 2;
-            this.btnDES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDES.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDES.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDES.Location = new System.Drawing.Point(52, 193);
-            this.btnDES.Name = "btnDES";
-            this.btnDES.Size = new System.Drawing.Size(161, 131);
-            this.btnDES.TabIndex = 2;
-            this.btnDES.Text = "DES";
-            this.btnDES.UseVisualStyleBackColor = false;
-            this.btnDES.Click += new System.EventHandler(this.btnDES_Click);
+            this.btnBack.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnBack.FlatAppearance.BorderSize = 2;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(310, 430);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(107, 34);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnRSA
+            // button1
             // 
-            this.btnRSA.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnRSA.FlatAppearance.BorderSize = 2;
-            this.btnRSA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRSA.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRSA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRSA.Location = new System.Drawing.Point(378, 193);
-            this.btnRSA.Name = "btnRSA";
-            this.btnRSA.Size = new System.Drawing.Size(161, 131);
-            this.btnRSA.TabIndex = 2;
-            this.btnRSA.Text = "RSA";
-            this.btnRSA.UseVisualStyleBackColor = false;
-            this.btnRSA.Click += new System.EventHandler(this.btnRSA_Click);
+            this.button1.BackColor = System.Drawing.Color.MediumPurple;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(447, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 34);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "EXIT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btnXXX
+            // lbType
             // 
-            this.btnXXX.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnXXX.FlatAppearance.BorderSize = 2;
-            this.btnXXX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXXX.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXXX.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnXXX.Location = new System.Drawing.Point(701, 193);
-            this.btnXXX.Name = "btnXXX";
-            this.btnXXX.Size = new System.Drawing.Size(161, 131);
-            this.btnXXX.TabIndex = 2;
-            this.btnXXX.Text = "XXX";
-            this.btnXXX.UseVisualStyleBackColor = false;
-            this.btnXXX.Click += new System.EventHandler(this.btnXXX_Click);
+            this.lbType.AutoSize = true;
+            this.lbType.Font = new System.Drawing.Font("Roboto", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.Location = new System.Drawing.Point(392, 77);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(105, 42);
+            this.lbType.TabIndex = 4;
+            this.lbType.Text = "TYPE";
             // 
-            // Form1
+            // btnInput
+            // 
+            this.btnInput.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnInput.FlatAppearance.BorderSize = 2;
+            this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInput.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInput.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInput.Location = new System.Drawing.Point(72, 172);
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Size = new System.Drawing.Size(99, 36);
+            this.btnInput.TabIndex = 5;
+            this.btnInput.Text = "Open File";
+            this.btnInput.UseVisualStyleBackColor = false;
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
+            // 
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(909, 530);
-            this.Controls.Add(this.btnXXX);
-            this.Controls.Add(this.btnRSA);
-            this.Controls.Add(this.btnDES);
+            this.ClientSize = new System.Drawing.Size(893, 491);
+            this.Controls.Add(this.btnInput);
+            this.Controls.Add(this.lbType);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.Name = "Form2";
+            this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnDES;
-        private System.Windows.Forms.Button btnRSA;
-        private System.Windows.Forms.Button btnXXX;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbType;
+        private System.Windows.Forms.Button btnInput;
     }
 }
-

@@ -7,36 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace Crypton1
 {
-    public class TrauDuongExption : Exception
+    public partial class Form2 : Form
     {
-        public TrauDuongExption(string msg):base(msg);
-    }
-    public partial class Form1 : Form
-    {
-       
-        public Form1()
+
+        public Form2()
         {
             InitializeComponent();
+
         }
+
         Point lastClick;
-        Form2 f2 = new Form2();
-
-
-
-
-
-
-
-
-       
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -77,21 +60,25 @@ namespace Crypton1
             }
         }
 
-        private void btnDES_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            f2.ShowDialog();
-            this.Show();
+            Application.Exit();
         }
 
-        private void btnRSA_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
-        private void btnXXX_Click(object sender, EventArgs e)
+        //file input
+        private void btnInput_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                MessageBox.Show(strfilename);
+            }
         }
     }
 }

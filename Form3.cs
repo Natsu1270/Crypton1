@@ -34,5 +34,28 @@ namespace Crypton1
         {
             Application.Exit();
         }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            WinAPI.AnimateWindow(this.Handle, 10, WinAPI.CENTER);
+        }
+        private void btnInput1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                txtAddress1.Text = strfilename;
+            }
+        }
+        private void btnInput2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                txtAddress2.Text = strfilename;
+            }
+        }
     }
 }

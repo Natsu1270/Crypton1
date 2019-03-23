@@ -25,6 +25,11 @@ namespace Crypton1
             this.lbType.Text = type;
         }
 
+        public void clearAdd()
+        {
+            this.txtAddress.Text = "";
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -83,6 +88,7 @@ namespace Crypton1
                 string strfilename = openFileDialog1.FileName;
                 txtAddress.Text = strfilename;
             }
+            
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
@@ -98,6 +104,16 @@ namespace Crypton1
                 string strfilename = openFileDialog1.FileName;
                 txtAddress.Text = strfilename;
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtAddress.Text = "";
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            WinAPI.AnimateWindow(this.Handle, 10, WinAPI.CENTER);
         }
     }
 }

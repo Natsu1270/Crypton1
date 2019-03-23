@@ -19,6 +19,11 @@ namespace Crypton1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"D:\Music\b.wav");
+
+            sp.PlayLooping();
+
+            //sp.Play();
             Application.Run(new Form1());
         }
         enum type { DES, RSA, XXX, HASH };

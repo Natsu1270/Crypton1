@@ -35,6 +35,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbType = new System.Windows.Forms.Label();
+            this.btnInput = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtAddress2 = new System.Windows.Forms.TextBox();
+            this.txtAddress1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +47,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(47, 9);
+            this.label1.Location = new System.Drawing.Point(37, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 38);
             this.label1.TabIndex = 0;
@@ -84,6 +88,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnInput);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -119,6 +125,55 @@
             this.lbType.TabIndex = 8;
             this.lbType.Text = "TYPE";
             // 
+            // btnInput
+            // 
+            this.btnInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.btnInput.FlatAppearance.BorderSize = 2;
+            this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInput.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInput.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInput.Location = new System.Drawing.Point(55, 137);
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Size = new System.Drawing.Size(134, 36);
+            this.btnInput.TabIndex = 9;
+            this.btnInput.Text = "Open File 1";
+            this.btnInput.UseVisualStyleBackColor = false;
+            this.btnInput.Click += new System.EventHandler(this.btnInput1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(55, 216);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 36);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Open File 2";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnInput2_Click);
+            // 
+            // txtAddress2
+            // 
+            this.txtAddress2.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAddress2.Location = new System.Drawing.Point(261, 216);
+            this.txtAddress2.Multiline = true;
+            this.txtAddress2.Name = "txtAddress2";
+            this.txtAddress2.Size = new System.Drawing.Size(621, 36);
+            this.txtAddress2.TabIndex = 9;
+            // 
+            // txtAddress1
+            // 
+            this.txtAddress1.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAddress1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress1.Location = new System.Drawing.Point(261, 137);
+            this.txtAddress1.Multiline = true;
+            this.txtAddress1.Name = "txtAddress1";
+            this.txtAddress1.Size = new System.Drawing.Size(621, 36);
+            this.txtAddress1.TabIndex = 10;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +181,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(919, 491);
+            this.Controls.Add(this.txtAddress2);
+            this.Controls.Add(this.txtAddress1);
             this.Controls.Add(this.lbType);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
@@ -135,6 +192,7 @@
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -150,5 +208,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lbType;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInput;
+        private System.Windows.Forms.TextBox txtAddress2;
+        private System.Windows.Forms.TextBox txtAddress1;
     }
 }

@@ -42,6 +42,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,6 +226,21 @@
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = false;
             // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(9)))), ((int)(((byte)(34)))));
+            this.btnReset.FlatAppearance.BorderSize = 2;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReset.Location = new System.Drawing.Point(517, 299);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(125, 53);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +248,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 530);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.btnMinimize);
@@ -244,6 +261,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel2.ResumeLayout(false);
@@ -267,5 +285,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnReset;
     }
 }

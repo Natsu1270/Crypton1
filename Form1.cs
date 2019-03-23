@@ -71,6 +71,7 @@ namespace Crypton1
         {
             this.Hide();
             f2.setLbType(type);
+            f2.clearAdd();
             f2.ShowDialog();
             try
             {
@@ -116,6 +117,11 @@ namespace Crypton1
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            WinAPI.AnimateWindow(this.Handle, 800, WinAPI.CENTER);
         }
     }
 }

@@ -16,5 +16,15 @@ namespace Crypton1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if(openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                MessageBox.Show(strfilename);
+            }
+        }
     }
 }

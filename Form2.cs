@@ -95,15 +95,15 @@ namespace Crypton1
         {
 
         }
+        
+        
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        public void disableCreatekey(bool t)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                string strfilename = openFileDialog1.FileName;
-                txtAddress.Text = strfilename;
-            }
+            this.p.Visible = t;
+            this.q.Visible = t;
+            this.pInput.Visible = t;
+            this.qInput.Visible = t;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -114,6 +114,42 @@ namespace Crypton1
         private void Form2_Load(object sender, EventArgs e)
         {
             WinAPI.AnimateWindow(this.Handle, 10, WinAPI.CENTER);
+        }
+
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            btnEncrypt.BackColor = System.Drawing.Color.Red;
+            btnDecrypt.BackColor = System.Drawing.Color.FromArgb(23, 9, 34);
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            btnDecrypt.BackColor = System.Drawing.Color.Red;
+            btnEncrypt.BackColor = System.Drawing.Color.FromArgb(23, 9, 34);
+
+        }
+
+        private void btnCreateKey_Click(object sender, EventArgs e)
+        {
+            this.disableCreatekey(true);
+            textGen.Visible = false;
+        }
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            textGen.Visible = true;
+            this.disableCreatekey(false);
+        }
+
+        private void btnOpenKey_Click(object sender, EventArgs e)
+        {
+            this.disableCreatekey(false);
+            textGen.Visible = false;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                fileResult.Text = strfilename;
+            }
         }
     }
 }

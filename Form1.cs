@@ -19,7 +19,7 @@ namespace Crypton1
         }
         Point lastClick;
         Form2 f2 = new Form2();
-
+        Form3 f3 = new Form3();
 
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -67,30 +67,52 @@ namespace Crypton1
             }
         }
 
-        private void btnDES_Click(object sender, EventArgs e)
+        private void gotoSection(string type)
         {
             this.Hide();
+            f2.setLbType(type);
             f2.ShowDialog();
             try
             {
-            this.Show();
+                this.Show();
             }
             catch (ObjectDisposedException error)
             {
                 Application.Exit();
             }
         }
+        private void btnDES_Click(object sender, EventArgs e)
+        {
+            gotoSection(btnDES.Text.ToString());
+        }
 
         private void btnRSA_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            gotoSection(btnRSA.Text.ToString());
+
         }
 
         private void btnXXX_Click(object sender, EventArgs e)
         {
-            this.Hide();
-        }
+            gotoSection(btnXXX.Text.ToString());
 
+        }
+        private void btnHash_Click(object sender, EventArgs e)
+        {
+           
+            this.Hide();
+            f3.setLbType(btnHash.Text.ToString());
+            f3.ShowDialog();
+            try
+            {
+                this.Show();
+            }
+            catch (ObjectDisposedException error)
+            {
+                Application.Exit();
+            }
+
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

@@ -20,6 +20,10 @@ namespace Crypton1
         }
 
         Point lastClick;
+        public void setLbType(String type)
+        {
+            this.lbType.Text = type;
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -77,7 +81,22 @@ namespace Crypton1
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string strfilename = openFileDialog1.FileName;
-                MessageBox.Show(strfilename);
+                txtAddress.Text = strfilename;
+            }
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                txtAddress.Text = strfilename;
             }
         }
     }

@@ -38,9 +38,8 @@
             this.btnInput = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -55,7 +54,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMinimize.Location = new System.Drawing.Point(805, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(848, 13);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(35, 33);
             this.btnMinimize.TabIndex = 2;
@@ -72,7 +71,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(846, 12);
+            this.btnClose.Location = new System.Drawing.Point(889, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 33);
             this.btnClose.TabIndex = 2;
@@ -113,7 +112,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(50, 433);
+            this.button1.Location = new System.Drawing.Point(50, 438);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 34);
             this.button1.TabIndex = 3;
@@ -128,7 +127,7 @@
             this.lbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbType.Font = new System.Drawing.Font("Roboto", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbType.Location = new System.Drawing.Point(482, 12);
+            this.lbType.Location = new System.Drawing.Point(510, 13);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(105, 42);
             this.lbType.TabIndex = 4;
@@ -152,11 +151,13 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAddress.Location = new System.Drawing.Point(262, 146);
+            this.txtAddress.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(278, 146);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(506, 36);
+            this.txtAddress.Size = new System.Drawing.Size(621, 36);
             this.txtAddress.TabIndex = 6;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // panel2
             // 
@@ -169,17 +170,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(234, 491);
+            this.panel2.Size = new System.Drawing.Size(234, 530);
             this.panel2.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(262, 225);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(506, 36);
-            this.textBox1.TabIndex = 6;
             // 
             // btnGenerate
             // 
@@ -194,19 +186,16 @@
             this.btnGenerate.TabIndex = 5;
             this.btnGenerate.Text = "Generate Key";
             this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // checkBox1
+            // textBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBox1.Location = new System.Drawing.Point(816, 154);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(65, 23);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Hash";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Location = new System.Drawing.Point(278, 225);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(621, 36);
+            this.textBox1.TabIndex = 6;
             // 
             // btnEncrypt
             // 
@@ -215,7 +204,7 @@
             this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEncrypt.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEncrypt.Location = new System.Drawing.Point(377, 335);
+            this.btnEncrypt.Location = new System.Drawing.Point(421, 413);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(130, 59);
             this.btnEncrypt.TabIndex = 9;
@@ -229,7 +218,7 @@
             this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecrypt.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDecrypt.Location = new System.Drawing.Point(561, 335);
+            this.btnDecrypt.Location = new System.Drawing.Point(620, 413);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(130, 59);
             this.btnDecrypt.TabIndex = 10;
@@ -242,10 +231,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(893, 491);
+            this.ClientSize = new System.Drawing.Size(935, 530);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel2);
@@ -256,6 +244,8 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -275,7 +265,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
     }

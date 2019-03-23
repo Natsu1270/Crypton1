@@ -9,12 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Crypton1
 {
-    /*
-    public class TrauDuongExption : Exception
-    {
-        public TrauDuongExption(string msg):base(msg);
-    }
-    */
+   
     public partial class Form1 : Form
     {
        
@@ -26,13 +21,6 @@ namespace Crypton1
         Form2 f2 = new Form2();
 
 
-
-
-
-
-
-
-       
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -83,7 +71,14 @@ namespace Crypton1
         {
             this.Hide();
             f2.ShowDialog();
+            try
+            {
             this.Show();
+            }
+            catch (ObjectDisposedException error)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnRSA_Click(object sender, EventArgs e)
@@ -94,6 +89,16 @@ namespace Crypton1
         private void btnXXX_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

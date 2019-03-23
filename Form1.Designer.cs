@@ -42,7 +42,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
             this.btnExit.FlatAppearance.BorderSize = 2;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -57,14 +57,14 @@
             // 
             // btnDES
             // 
-            this.btnDES.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDES.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
             this.btnDES.FlatAppearance.BorderSize = 0;
             this.btnDES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDES.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDES.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDES.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDES.Location = new System.Drawing.Point(54, 82);
+            this.btnDES.Location = new System.Drawing.Point(3, 74);
             this.btnDES.Name = "btnDES";
-            this.btnDES.Size = new System.Drawing.Size(121, 48);
+            this.btnDES.Size = new System.Drawing.Size(228, 76);
             this.btnDES.TabIndex = 2;
             this.btnDES.Text = "DES";
             this.btnDES.UseVisualStyleBackColor = false;
@@ -72,14 +72,14 @@
             // 
             // btnRSA
             // 
-            this.btnRSA.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnRSA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
             this.btnRSA.FlatAppearance.BorderSize = 0;
             this.btnRSA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRSA.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRSA.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRSA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRSA.Location = new System.Drawing.Point(54, 164);
+            this.btnRSA.Location = new System.Drawing.Point(3, 202);
             this.btnRSA.Name = "btnRSA";
-            this.btnRSA.Size = new System.Drawing.Size(121, 48);
+            this.btnRSA.Size = new System.Drawing.Size(228, 72);
             this.btnRSA.TabIndex = 2;
             this.btnRSA.Text = "RSA";
             this.btnRSA.UseVisualStyleBackColor = false;
@@ -87,14 +87,14 @@
             // 
             // btnXXX
             // 
-            this.btnXXX.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnXXX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
             this.btnXXX.FlatAppearance.BorderSize = 0;
             this.btnXXX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXXX.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXXX.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXXX.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnXXX.Location = new System.Drawing.Point(54, 247);
+            this.btnXXX.Location = new System.Drawing.Point(0, 332);
             this.btnXXX.Name = "btnXXX";
-            this.btnXXX.Size = new System.Drawing.Size(121, 48);
+            this.btnXXX.Size = new System.Drawing.Size(234, 73);
             this.btnXXX.TabIndex = 2;
             this.btnXXX.Text = "XXX";
             this.btnXXX.UseVisualStyleBackColor = false;
@@ -102,9 +102,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnDES);
             this.panel2.Controls.Add(this.btnRSA);
@@ -114,7 +112,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 530);
             this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -130,9 +127,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Firebrick;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,9 +143,8 @@
             // 
             // btnMinimize
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Firebrick;
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,6 +171,7 @@
             this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);

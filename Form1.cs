@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Crypton1
 {
+    /*
     public class TrauDuongExption : Exception
     {
         public TrauDuongExption(string msg):base(msg);
     }
+    */
     public partial class Form1 : Form
     {
        

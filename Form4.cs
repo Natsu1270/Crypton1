@@ -84,6 +84,7 @@ namespace Crypton1
         {
             DESCryptoServiceProvider desCrypto = (DESCryptoServiceProvider)DESCryptoServiceProvider.Create();
             key.Text = ASCIIEncoding.ASCII.GetString(desCrypto.Key);
+            System.IO.File.WriteAllText(@"D:\UnitTest\DES\Key.txt", key.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)

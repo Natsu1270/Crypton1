@@ -57,5 +57,10 @@ namespace Crypton1
                 txtAddress2.Text = strfilename;
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

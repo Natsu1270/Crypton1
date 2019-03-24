@@ -41,6 +41,11 @@
             this.lbType = new System.Windows.Forms.Label();
             this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.HashCode1 = new System.Windows.Forms.Label();
+            this.HashCode2 = new System.Windows.Forms.Label();
+            this.HashCompare = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,11 +111,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(51, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 38);
+            this.label1.Size = new System.Drawing.Size(169, 38);
             this.label1.TabIndex = 12;
             this.label1.Text = "CrypTun ®";
             // 
@@ -134,9 +139,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Roboto Cn", 15.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(55, 216);
+            this.button1.Location = new System.Drawing.Point(55, 229);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 36);
             this.button1.TabIndex = 10;
@@ -146,10 +151,10 @@
             // 
             // btnInput
             // 
-            this.btnInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.btnInput.FlatAppearance.BorderSize = 0;
             this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInput.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInput.Font = new System.Drawing.Font("Roboto Cn", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnInput.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnInput.Location = new System.Drawing.Point(55, 137);
             this.btnInput.Name = "btnInput";
@@ -183,14 +188,14 @@
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbType.Location = new System.Drawing.Point(516, 26);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(114, 42);
+            this.lbType.Size = new System.Drawing.Size(112, 42);
             this.lbType.TabIndex = 8;
             this.lbType.Text = "HASH";
             // 
             // txtAddress2
             // 
             this.txtAddress2.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAddress2.Location = new System.Drawing.Point(261, 216);
+            this.txtAddress2.Location = new System.Drawing.Point(261, 229);
             this.txtAddress2.Multiline = true;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(621, 36);
@@ -206,6 +211,74 @@
             this.txtAddress1.Size = new System.Drawing.Size(621, 36);
             this.txtAddress1.TabIndex = 10;
             // 
+            // btnRun
+            // 
+            this.btnRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnRun.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRun.BackgroundImage")));
+            this.btnRun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRun.FlatAppearance.BorderSize = 0;
+            this.btnRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRun.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
+            this.btnRun.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRun.Location = new System.Drawing.Point(600, 316);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(127, 100);
+            this.btnRun.TabIndex = 12;
+            this.btnRun.Text = "RUN";
+            this.btnRun.UseVisualStyleBackColor = false;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
+            // HashCode1
+            // 
+            this.HashCode1.AutoSize = true;
+            this.HashCode1.BackColor = System.Drawing.Color.Transparent;
+            this.HashCode1.Font = new System.Drawing.Font("Roboto Bk", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HashCode1.ForeColor = System.Drawing.SystemColors.Control;
+            this.HashCode1.Location = new System.Drawing.Point(260, 185);
+            this.HashCode1.Name = "HashCode1";
+            this.HashCode1.Size = new System.Drawing.Size(0, 19);
+            this.HashCode1.TabIndex = 13;
+            // 
+            // HashCode2
+            // 
+            this.HashCode2.AutoSize = true;
+            this.HashCode2.BackColor = System.Drawing.Color.Transparent;
+            this.HashCode2.Font = new System.Drawing.Font("Roboto Bk", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HashCode2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.HashCode2.Location = new System.Drawing.Point(261, 279);
+            this.HashCode2.Name = "HashCode2";
+            this.HashCode2.Size = new System.Drawing.Size(0, 19);
+            this.HashCode2.TabIndex = 14;
+            // 
+            // HashCompare
+            // 
+            this.HashCompare.AutoSize = true;
+            this.HashCompare.BackColor = System.Drawing.Color.Transparent;
+            this.HashCompare.Font = new System.Drawing.Font("Roboto Bk", 15F);
+            this.HashCompare.ForeColor = System.Drawing.Color.Transparent;
+            this.HashCompare.Location = new System.Drawing.Point(261, 337);
+            this.HashCompare.Name = "HashCompare";
+            this.HashCompare.Size = new System.Drawing.Size(0, 24);
+            this.HashCompare.TabIndex = 15;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReset.Location = new System.Drawing.Point(755, 316);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(127, 100);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.Text = "RESET";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +286,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(919, 491);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.HashCompare);
+            this.Controls.Add(this.HashCode2);
+            this.Controls.Add(this.HashCode1);
+            this.Controls.Add(this.btnRun);
             this.Controls.Add(this.txtAddress2);
             this.Controls.Add(this.txtAddress1);
             this.Controls.Add(this.lbType);
@@ -247,5 +325,10 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lbVersion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRun;
+        private System.Windows.Forms.Label HashCode1;
+        private System.Windows.Forms.Label HashCode2;
+        private System.Windows.Forms.Label HashCompare;
+        private System.Windows.Forms.Button btnReset;
     }
 }

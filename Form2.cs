@@ -12,15 +12,28 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Xml;
 using RSACryptography;
+using System.Runtime.InteropServices;
 
 namespace Crypton1
 {
     public partial class Form2 : Form
     {
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+         (
+             int nLeftRect,     // x-coordinate of upper-left corner
+             int nTopRect,      // y-coordinate of upper-left corner
+             int nRightRect,    // x-coordinate of lower-right corner
+             int nBottomRect,   // y-coordinate of lower-right corner
+             int nWidthEllipse, // height of ellipse
+             int nHeightEllipse // width of ellipse
+         );
+
         public Form2()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         Point lastClick;
@@ -103,9 +116,29 @@ namespace Crypton1
             //this.eOutput.Visible = t;
         }
 
+        private void disableOtherBtn(Button curBtn)
+        {
+            foreach (var button in this.Controls.OfType<Button>())
+            {
+                button.FlatAppearance.BorderSize = 0;
+            }
+            curBtn.FlatAppearance.BorderSize = 4;
+            curBtn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+        }
+        private void disableAllBtn()
+        {
+            foreach (var btn in this.Controls.OfType<Button>())
+            {
+                btn.FlatAppearance.BorderSize = 0;
+            }
+        }
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtAddress.Text = "";
+            //txtAddress.Text = "";
+            txtAddress.Visible = false;
+            fileResult.Visible = false;
+            typeCryp = "";
+            disableAllBtn();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -115,16 +148,14 @@ namespace Crypton1
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            btnEncrypt.BackColor = System.Drawing.Color.Red;
-            btnDecrypt.BackColor = System.Drawing.Color.FromArgb(23, 9, 34);
+            disableOtherBtn(btnEncrypt);
             typeCryp = btnEncrypt.Text.ToString();
 
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            btnDecrypt.BackColor = System.Drawing.Color.Red;
-            btnEncrypt.BackColor = System.Drawing.Color.FromArgb(23, 9, 34);
+            disableOtherBtn(btnDecrypt);
             typeCryp = btnDecrypt.Text.ToString();
         }
 
@@ -173,12 +204,31 @@ namespace Crypton1
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string strfilename = openFileDialog1.FileName;
+                fileResult.Visible = true;
                 fileResult.Text = strfilename;
             }
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
+            if (!txtAddress.Visible)
+            {
+                MessageBox.Show("Please input a file to process encrypt/decrypt!", "No input file error!");
+                return;
+            }else if (!fileResult.Visible)
+            {
+                MessageBox.Show("Please input a key file to process encrypt/decrypt!", "No key file error!");
+                return;
+            }else if (Path.GetExtension(fileResult.Text.ToString()) != ".xml")
+            {
+                //MessageBox.Show(Path.GetExtension(fileResult.Text.ToString()));
+                MessageBox.Show("Wrong key extension!", "Extension error!");
+                return;
+            }else if (typeCryp == "")
+            {
+                MessageBox.Show("Please choose encrypt/decrypt mode to process", "Mode error!");
+                return;
+            }
             if (typeCryp == btnEncrypt.Text)
             {
                 RSAEncrypt(fileResult.Text, txtAddress.Text);
@@ -253,6 +303,24 @@ namespace Crypton1
             string decryptedString = Convert.ToBase64String(decryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\decrypted.txt", decryptedData);
         }
+
+        private void fileResult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOnHover(Button btn)
+        {
+            btn.FlatAppearance.BorderSize = 3;
+            btn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+        }
+
+        private void btnOnLeave(Button btn)
+        {
+            btn.FlatAppearance.BorderSize = 0;
+        }
+
+       
     }
 }
 

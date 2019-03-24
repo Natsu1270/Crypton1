@@ -19,7 +19,7 @@ namespace Crypton1
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"D:\Music\b.wav");
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"D:\VAN BANG 2\HK182\MM&ANM\Github\Crypton1\asset\b.wav");
 
             sp.PlayLooping();
 
@@ -27,5 +27,6 @@ namespace Crypton1
             Application.Run(new Form1());
         }
         enum type { DES, RSA, XXX, HASH };
+        
     }
 }

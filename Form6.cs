@@ -42,5 +42,10 @@ namespace Crypton1
             gd.ShowDialog();
            
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

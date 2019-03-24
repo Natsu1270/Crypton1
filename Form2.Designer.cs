@@ -50,6 +50,7 @@
             this.txtAddress = new System.Windows.Forms.Label();
             this.eOutput = new System.Windows.Forms.TextBox();
             this.mOutput = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,7 +127,7 @@
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbType.Location = new System.Drawing.Point(526, 13);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(86, 42);
+            this.lbType.Size = new System.Drawing.Size(84, 42);
             this.lbType.TabIndex = 4;
             this.lbType.Text = "RSA";
             // 
@@ -354,6 +355,13 @@
             this.mOutput.Size = new System.Drawing.Size(168, 40);
             this.mOutput.TabIndex = 17;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(315, 424);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(267, 23);
+            this.progressBar1.TabIndex = 18;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +369,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 530);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.mOutput);
             this.Controls.Add(this.eOutput);
             this.Controls.Add(this.txtAddress);
@@ -411,5 +420,6 @@
         private System.Windows.Forms.TextBox mOutput;
         private System.Windows.Forms.Label lbVersion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

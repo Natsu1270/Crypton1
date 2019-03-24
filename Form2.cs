@@ -254,17 +254,34 @@ namespace Crypton1
             eOutput.Text = xnList.InnerText;
 
             byte[] byteArrayPlain = File.ReadAllBytes(plainFileName);
-            byte[] encryptedData;
+            byte[] encryptedData = new byte[byteArrayPlain.Length];
             RSAParameters RSAKeyInfo = new RSAParameters();
             RSAKeyInfo.Modulus = Convert.FromBase64String(mOutput.Text);
             RSAKeyInfo.Exponent = Convert.FromBase64String(eOutput.Text);
-
+            
             using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
             {
                 RSA.ImportParameters(RSAKeyInfo);
-                encryptedData = RSA.Encrypt(byteArrayPlain, false);
+                int maxBytesCanEncrypted = ((RSA.KeySize - 384) / 8) + 37;
+                int len = 0;
+                byte[] binData = new byte[maxBytesCanEncrypted];
+                byte[] binEncrypt = new byte[maxBytesCanEncrypted];
+                while (len < byteArrayPlain.Length)
+                {
+                    int x = byteArrayPlain.Length - len;
+                    if (x >= maxBytesCanEncrypted)
+                    {
+                        x = maxBytesCanEncrypted;
+                    }
+                    Array.Copy(byteArrayPlain, len, binData, 0, x);
+  
+                    binEncrypt = RSA.Encrypt(binData, false);
+                    System.Buffer.BlockCopy(binEncrypt, 0, encryptedData, 0, maxBytesCanEncrypted);
+                    len += maxBytesCanEncrypted;
+                }
+               
             }
-            string encryptedString = Convert.ToBase64String(encryptedData);
+            //string encryptedString = Convert.ToBase64String(encryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\encrypted.txt", encryptedData);
         }
 
@@ -293,15 +310,32 @@ namespace Crypton1
             RSAKeyInfo.D = Convert.FromBase64String(xnList.InnerText);
 
             byte[] byteArrayCipher = File.ReadAllBytes(cypherFileName);
-            byte[] decryptedData;
+            byte[] decryptedData = new byte[byteArrayCipher.Length];
 
             using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
             {
                 RSA.ImportParameters(RSAKeyInfo);
-                decryptedData = RSA.Decrypt(byteArrayCipher, false);
+                int maxBytesCanEncrypted = RSA.KeySize / 8;
+                int len = 0;
+                byte[] binData = new byte[maxBytesCanEncrypted];
+                byte[] binDecrypt = new byte[maxBytesCanEncrypted];
+                while (len < byteArrayCipher.Length)
+                {
+                    int x = byteArrayCipher.Length - len;
+                    if (x >= maxBytesCanEncrypted)
+                    {
+                        x = maxBytesCanEncrypted;
+                    }
+                    Array.Copy(byteArrayCipher, len, binData, 0, x);
+
+                    binDecrypt = RSA.Decrypt(binData, false);
+                    System.Buffer.BlockCopy(binDecrypt, 0, decryptedData, 0, maxBytesCanEncrypted);
+                    len += maxBytesCanEncrypted;
+                }
+
             }
-            string decryptedString = Convert.ToBase64String(decryptedData);
-            System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\decrypted.txt", decryptedData);
+            //string encryptedString = Convert.ToBase64String(decryptedData);
+            System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\encrypted.txt", decryptedData);
         }
 
         private void fileResult_Click(object sender, EventArgs e)

@@ -92,7 +92,7 @@
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBack.Location = new System.Drawing.Point(12, 12);
             this.btnBack.Name = "btnBack";
@@ -108,7 +108,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(0, 483);
             this.button1.Name = "button1";
@@ -123,11 +123,11 @@
             this.lbType.AutoSize = true;
             this.lbType.BackColor = System.Drawing.Color.Transparent;
             this.lbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbType.Font = new System.Drawing.Font("Roboto", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbType.Location = new System.Drawing.Point(526, 13);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(86, 42);
+            this.lbType.Size = new System.Drawing.Size(91, 39);
             this.lbType.TabIndex = 4;
             this.lbType.Text = "RSA";
             // 
@@ -137,7 +137,7 @@
             this.btnInput.FlatAppearance.BorderSize = 0;
             this.btnInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInput.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInput.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnInput.Location = new System.Drawing.Point(0, 102);
             this.btnInput.Name = "btnInput";
@@ -166,11 +166,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(56, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 38);
+            this.label1.Size = new System.Drawing.Size(182, 37);
             this.label1.TabIndex = 8;
             this.label1.Text = "CrypTun ®";
             // 
@@ -191,7 +191,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(0, 304);
             this.button2.Name = "button2";
@@ -207,7 +207,7 @@
             this.btnGenerate.FlatAppearance.BorderSize = 0;
             this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGenerate.Location = new System.Drawing.Point(0, 203);
             this.btnGenerate.Name = "btnGenerate";
@@ -225,7 +225,7 @@
             this.btnEncrypt.FlatAppearance.BorderSize = 0;
             this.btnEncrypt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncrypt.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEncrypt.Location = new System.Drawing.Point(809, 79);
             this.btnEncrypt.Name = "btnEncrypt";
@@ -243,7 +243,7 @@
             this.btnDecrypt.FlatAppearance.BorderSize = 0;
             this.btnDecrypt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecrypt.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDecrypt.Location = new System.Drawing.Point(809, 185);
             this.btnDecrypt.Name = "btnDecrypt";
@@ -260,7 +260,7 @@
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnReset.Location = new System.Drawing.Point(809, 396);
             this.btnReset.Name = "btnReset";
@@ -278,7 +278,7 @@
             this.btnRun.FlatAppearance.BorderSize = 0;
             this.btnRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRun.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
+            this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.btnRun.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRun.Location = new System.Drawing.Point(809, 290);
             this.btnRun.Name = "btnRun";
@@ -292,11 +292,11 @@
             // 
             this.fileResult.AutoSize = true;
             this.fileResult.BackColor = System.Drawing.Color.Transparent;
-            this.fileResult.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileResult.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.fileResult.Location = new System.Drawing.Point(310, 343);
             this.fileResult.Name = "fileResult";
-            this.fileResult.Size = new System.Drawing.Size(57, 29);
+            this.fileResult.Size = new System.Drawing.Size(65, 29);
             this.fileResult.TabIndex = 14;
             this.fileResult.Text = "____";
             this.fileResult.Visible = false;
@@ -306,11 +306,11 @@
             // 
             this.e.AutoSize = true;
             this.e.BackColor = System.Drawing.Color.Transparent;
-            this.e.Font = new System.Drawing.Font("Roboto", 18F);
+            this.e.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.e.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.e.Location = new System.Drawing.Point(692, 203);
             this.e.Name = "e";
-            this.e.Size = new System.Drawing.Size(26, 29);
+            this.e.Size = new System.Drawing.Size(27, 29);
             this.e.TabIndex = 12;
             this.e.Text = "e";
             // 
@@ -318,26 +318,28 @@
             // 
             this.m.AutoSize = true;
             this.m.BackColor = System.Drawing.Color.Transparent;
-            this.m.Font = new System.Drawing.Font("Roboto", 18F);
+            this.m.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.m.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.m.Location = new System.Drawing.Point(379, 203);
             this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(34, 29);
+            this.m.Size = new System.Drawing.Size(33, 29);
             this.m.TabIndex = 12;
             this.m.Text = "m";
+            this.m.Click += new System.EventHandler(this.m_Click);
             // 
             // txtAddress
             // 
             this.txtAddress.AutoSize = true;
             this.txtAddress.BackColor = System.Drawing.Color.Transparent;
-            this.txtAddress.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtAddress.Location = new System.Drawing.Point(310, 136);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(57, 29);
+            this.txtAddress.Size = new System.Drawing.Size(65, 29);
             this.txtAddress.TabIndex = 15;
             this.txtAddress.Text = "____";
             this.txtAddress.Visible = false;
+            this.txtAddress.Click += new System.EventHandler(this.txtAddress_Click);
             // 
             // progressBar1
             // 

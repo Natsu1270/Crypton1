@@ -337,7 +337,15 @@ namespace Crypton1
             btn.FlatAppearance.BorderSize = 0;
         }
 
-       
+        private void txtAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

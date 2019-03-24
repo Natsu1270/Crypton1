@@ -32,15 +32,15 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbVersion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnInput = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbType = new System.Windows.Forms.Label();
             this.txtAddress2 = new System.Windows.Forms.TextBox();
             this.txtAddress1 = new System.Windows.Forms.TextBox();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.lbVersion = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,43 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 491);
             this.panel2.TabIndex = 7;
+            // 
+            // lbVersion
+            // 
+            this.lbVersion.AutoSize = true;
+            this.lbVersion.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersion.ForeColor = System.Drawing.Color.White;
+            this.lbVersion.Location = new System.Drawing.Point(101, 61);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(48, 24);
+            this.lbVersion.TabIndex = 13;
+            this.lbVersion.Text = "V1.0.0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(51, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 38);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "CrypTun ®";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnBack.FlatAppearance.BorderSize = 2;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.Location = new System.Drawing.Point(12, 19);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(31, 34);
+            this.btnBack.TabIndex = 11;
+            this.btnBack.Text = "<";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // button1
             // 
@@ -168,43 +205,6 @@
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(621, 36);
             this.txtAddress1.TabIndex = 10;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
-            this.btnBack.FlatAppearance.BorderSize = 2;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBack.Location = new System.Drawing.Point(6, 8);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(38, 34);
-            this.btnBack.TabIndex = 11;
-            this.btnBack.Text = "<";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // lbVersion
-            // 
-            this.lbVersion.AutoSize = true;
-            this.lbVersion.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersion.ForeColor = System.Drawing.Color.White;
-            this.lbVersion.Location = new System.Drawing.Point(108, 48);
-            this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(48, 24);
-            this.lbVersion.TabIndex = 13;
-            this.lbVersion.Text = "V1.0.0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(58, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 38);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "CrypTun ®";
             // 
             // Form3
             // 

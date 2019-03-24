@@ -126,5 +126,21 @@ namespace Crypton1
         {
             WinAPI.AnimateWindow(this.Handle, 800, WinAPI.CENTER);
         }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastClick = e.Location;
+
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastClick.X;
+                this.Top += e.Y - lastClick.Y;
+
+            }
+        }
     }
 }

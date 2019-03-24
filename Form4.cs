@@ -13,6 +13,8 @@ namespace Crypton1
 {
     public partial class Form4 : Form
     {
+        private Point lastClick;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
          (
@@ -47,6 +49,21 @@ namespace Crypton1
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Form4_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastClick = e.Location;
+        }
+
+        private void Form4_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastClick.X;
+                this.Top += e.Y - lastClick.Y;
+
+            }
         }
     }
 }

@@ -48,9 +48,9 @@
             this.e = new System.Windows.Forms.Label();
             this.m = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.Label();
-            this.eOutput = new System.Windows.Forms.TextBox();
-            this.mOutput = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.eOutput = new System.Windows.Forms.Label();
+            this.mOutput = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +127,7 @@
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbType.Location = new System.Drawing.Point(526, 13);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(84, 42);
+            this.lbType.Size = new System.Drawing.Size(86, 42);
             this.lbType.TabIndex = 4;
             this.lbType.Text = "RSA";
             // 
@@ -308,7 +308,7 @@
             this.e.BackColor = System.Drawing.Color.Transparent;
             this.e.Font = new System.Drawing.Font("Roboto", 18F);
             this.e.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.e.Location = new System.Drawing.Point(590, 250);
+            this.e.Location = new System.Drawing.Point(692, 203);
             this.e.Name = "e";
             this.e.Size = new System.Drawing.Size(26, 29);
             this.e.TabIndex = 12;
@@ -320,7 +320,7 @@
             this.m.BackColor = System.Drawing.Color.Transparent;
             this.m.Font = new System.Drawing.Font("Roboto", 18F);
             this.m.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.m.Location = new System.Drawing.Point(275, 250);
+            this.m.Location = new System.Drawing.Point(379, 203);
             this.m.Name = "m";
             this.m.Size = new System.Drawing.Size(34, 29);
             this.m.TabIndex = 12;
@@ -339,13 +339,24 @@
             this.txtAddress.Text = "____";
             this.txtAddress.Visible = false;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(315, 424);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(267, 23);
+            this.progressBar1.TabIndex = 18;
+            // 
             // eOutput
             // 
-            this.eOutput.Location = new System.Drawing.Point(626, 246);
-            this.eOutput.Multiline = true;
+            this.eOutput.AutoSize = true;
+            this.eOutput.BackColor = System.Drawing.Color.Transparent;
+            this.eOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eOutput.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.eOutput.Location = new System.Drawing.Point(682, 272);
             this.eOutput.Name = "eOutput";
-            this.eOutput.Size = new System.Drawing.Size(170, 40);
-            this.eOutput.TabIndex = 16;
+            this.eOutput.Size = new System.Drawing.Size(49, 13);
+            this.eOutput.TabIndex = 19;
+            this.eOutput.Text = "_______";
             // 
             // mOutput
             // 
@@ -355,13 +366,6 @@
             this.mOutput.Size = new System.Drawing.Size(168, 40);
             this.mOutput.TabIndex = 17;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(315, 424);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(267, 23);
-            this.progressBar1.TabIndex = 18;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,9 +373,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 530);
+            this.Controls.Add(this.eOutput);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.mOutput);
-            this.Controls.Add(this.eOutput);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.m);
             this.Controls.Add(this.e);
@@ -416,10 +420,10 @@
         private System.Windows.Forms.Label e;
         private System.Windows.Forms.Label m;
         private System.Windows.Forms.Label txtAddress;
-        private System.Windows.Forms.TextBox eOutput;
-        private System.Windows.Forms.TextBox mOutput;
         private System.Windows.Forms.Label lbVersion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label eOutput;
+        private System.Windows.Forms.TextBox mOutput;
     }
 }

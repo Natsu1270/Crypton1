@@ -241,9 +241,7 @@ namespace Crypton1
         }
 
 
-
-        public void RSAEncrypt(string keyFileName, string plainFileName)
-
+        public void RSAGetPublicKey(string keyFileName)
         {
             //Get public key
             XmlDocument xml = new XmlDocument();
@@ -252,6 +250,12 @@ namespace Crypton1
             mOutput.Text = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
             eOutput.Text = xnList.InnerText;
+        }
+        public void RSAEncrypt(string keyFileName, string plainFileName)
+
+        {
+
+            RSAGetPublicKey(keyFileName);
 
             byte[] byteArrayPlain = File.ReadAllBytes(plainFileName);
             byte[] encryptedData = new byte[byteArrayPlain.Length];

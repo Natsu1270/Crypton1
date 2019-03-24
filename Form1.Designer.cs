@@ -35,17 +35,17 @@
             this.btnXXX = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHash = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnHash = new System.Windows.Forms.Button();
+            this.lbVersion = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.btnExit.FlatAppearance.BorderSize = 2;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -59,15 +59,15 @@
             // 
             // btnDES
             // 
-            this.btnDES.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
+            this.btnDES.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.btnDES.FlatAppearance.BorderSize = 0;
-            this.btnDES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(24)))), ((int)(((byte)(65)))));
+            this.btnDES.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnDES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDES.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDES.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDES.Location = new System.Drawing.Point(0, 74);
+            this.btnDES.Location = new System.Drawing.Point(0, 142);
             this.btnDES.Name = "btnDES";
-            this.btnDES.Size = new System.Drawing.Size(234, 88);
+            this.btnDES.Size = new System.Drawing.Size(235, 96);
             this.btnDES.TabIndex = 2;
             this.btnDES.Text = "DES";
             this.btnDES.UseVisualStyleBackColor = false;
@@ -75,15 +75,15 @@
             // 
             // btnRSA
             // 
-            this.btnRSA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
+            this.btnRSA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.btnRSA.FlatAppearance.BorderSize = 0;
-            this.btnRSA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(24)))), ((int)(((byte)(65)))));
+            this.btnRSA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnRSA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRSA.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRSA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRSA.Location = new System.Drawing.Point(0, 181);
+            this.btnRSA.Location = new System.Drawing.Point(0, 236);
             this.btnRSA.Name = "btnRSA";
-            this.btnRSA.Size = new System.Drawing.Size(234, 87);
+            this.btnRSA.Size = new System.Drawing.Size(235, 102);
             this.btnRSA.TabIndex = 2;
             this.btnRSA.Text = "RSA";
             this.btnRSA.UseVisualStyleBackColor = false;
@@ -91,15 +91,15 @@
             // 
             // btnXXX
             // 
-            this.btnXXX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
+            this.btnXXX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.btnXXX.FlatAppearance.BorderSize = 0;
-            this.btnXXX.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(24)))), ((int)(((byte)(65)))));
+            this.btnXXX.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnXXX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXXX.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXXX.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnXXX.Location = new System.Drawing.Point(0, 287);
+            this.btnXXX.Location = new System.Drawing.Point(0, 335);
             this.btnXXX.Name = "btnXXX";
-            this.btnXXX.Size = new System.Drawing.Size(234, 87);
+            this.btnXXX.Size = new System.Drawing.Size(235, 103);
             this.btnXXX.TabIndex = 2;
             this.btnXXX.Text = "XXX";
             this.btnXXX.UseVisualStyleBackColor = false;
@@ -107,7 +107,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.panel2.Controls.Add(this.lbVersion);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnDES);
             this.panel2.Controls.Add(this.btnRSA);
@@ -124,18 +125,34 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(47, 9);
+            this.label1.Location = new System.Drawing.Point(50, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 38);
+            this.label1.Size = new System.Drawing.Size(173, 38);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CRYPTO";
+            this.label1.Text = "CrypTun ®";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnHash
+            // 
+            this.btnHash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.btnHash.FlatAppearance.BorderSize = 0;
+            this.btnHash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.btnHash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHash.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHash.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHash.Location = new System.Drawing.Point(0, 433);
+            this.btnHash.Name = "btnHash";
+            this.btnHash.Size = new System.Drawing.Size(235, 96);
+            this.btnHash.TabIndex = 2;
+            this.btnHash.Text = "HASH";
+            this.btnHash.UseVisualStyleBackColor = false;
+            this.btnHash.Click += new System.EventHandler(this.btnHash_Click);
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -149,9 +166,9 @@
             // 
             // btnMinimize
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -163,21 +180,16 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // btnHash
+            // lbVersion
             // 
-            this.btnHash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(32)))), ((int)(((byte)(50)))));
-            this.btnHash.FlatAppearance.BorderSize = 0;
-            this.btnHash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(24)))), ((int)(((byte)(65)))));
-            this.btnHash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHash.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHash.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHash.Location = new System.Drawing.Point(0, 397);
-            this.btnHash.Name = "btnHash";
-            this.btnHash.Size = new System.Drawing.Size(234, 84);
-            this.btnHash.TabIndex = 2;
-            this.btnHash.Text = "HASH";
-            this.btnHash.UseVisualStyleBackColor = false;
-            this.btnHash.Click += new System.EventHandler(this.btnHash_Click);
+            this.lbVersion.AutoSize = true;
+            this.lbVersion.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersion.ForeColor = System.Drawing.Color.White;
+            this.lbVersion.Location = new System.Drawing.Point(100, 69);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(48, 24);
+            this.lbVersion.TabIndex = 4;
+            this.lbVersion.Text = "V1.0.0";
             // 
             // Form1
             // 
@@ -214,6 +226,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnHash;
+        private System.Windows.Forms.Label lbVersion;
     }
 }
 

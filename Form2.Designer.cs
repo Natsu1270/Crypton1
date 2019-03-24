@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbType = new System.Windows.Forms.Label();
@@ -49,15 +48,17 @@
             this.txtAddress = new System.Windows.Forms.Label();
             this.eOutput = new System.Windows.Forms.TextBox();
             this.mOutput = new System.Windows.Forms.TextBox();
+            this.lbVersion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMinimize
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 2;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -71,10 +72,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 2;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -86,21 +87,9 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(65, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CRYPTO";
-            // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.btnBack.FlatAppearance.BorderSize = 2;
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -114,14 +103,15 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(3)))), ((int)(((byte)(62)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(50, 438);
+            this.button1.Location = new System.Drawing.Point(0, 472);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 34);
+            this.button1.Size = new System.Drawing.Size(234, 58);
             this.button1.TabIndex = 3;
             this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = false;
@@ -142,28 +132,30 @@
             // 
             // btnInput
             // 
-            this.btnInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.btnInput.FlatAppearance.BorderSize = 2;
+            this.btnInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.btnInput.FlatAppearance.BorderSize = 0;
+            this.btnInput.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInput.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInput.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInput.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInput.Location = new System.Drawing.Point(50, 146);
+            this.btnInput.Location = new System.Drawing.Point(0, 102);
             this.btnInput.Name = "btnInput";
-            this.btnInput.Size = new System.Drawing.Size(134, 36);
+            this.btnInput.Size = new System.Drawing.Size(234, 100);
             this.btnInput.TabIndex = 5;
-            this.btnInput.Text = "Open File";
+            this.btnInput.Text = "OPEN FILE";
             this.btnInput.UseVisualStyleBackColor = false;
             this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lbVersion);
             this.panel2.Controls.Add(this.btnBack);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btnGenerate);
             this.panel2.Controls.Add(this.btnInput);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -172,44 +164,46 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(50, 295);
+            this.button2.Location = new System.Drawing.Point(0, 304);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 36);
+            this.button2.Size = new System.Drawing.Size(234, 100);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Open Key File";
+            this.button2.Text = "OPEN KEY FILE";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnOpenKey_Click);
             // 
             // btnGenerate
             // 
-            this.btnGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(40)))), ((int)(((byte)(63)))));
-            this.btnGenerate.FlatAppearance.BorderSize = 2;
+            this.btnGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.btnGenerate.FlatAppearance.BorderSize = 0;
+            this.btnGenerate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGenerate.Location = new System.Drawing.Point(50, 224);
+            this.btnGenerate.Location = new System.Drawing.Point(0, 203);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(134, 36);
+            this.btnGenerate.Size = new System.Drawing.Size(234, 100);
             this.btnGenerate.TabIndex = 5;
-            this.btnGenerate.Text = "Generate Key";
+            this.btnGenerate.Text = "GENERATE KEY";
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnEncrypt
             // 
-            this.btnEncrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(9)))), ((int)(((byte)(34)))));
-            this.btnEncrypt.FlatAppearance.BorderSize = 3;
+            this.btnEncrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnEncrypt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEncrypt.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEncrypt.Location = new System.Drawing.Point(400, 72);
+            this.btnEncrypt.Location = new System.Drawing.Point(806, 86);
             this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(130, 59);
+            this.btnEncrypt.Size = new System.Drawing.Size(130, 60);
             this.btnEncrypt.TabIndex = 9;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = false;
@@ -217,14 +211,14 @@
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(9)))), ((int)(((byte)(34)))));
-            this.btnDecrypt.FlatAppearance.BorderSize = 3;
+            this.btnDecrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnDecrypt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecrypt.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDecrypt.Location = new System.Drawing.Point(612, 72);
+            this.btnDecrypt.Location = new System.Drawing.Point(806, 145);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(130, 59);
+            this.btnDecrypt.Size = new System.Drawing.Size(130, 60);
             this.btnDecrypt.TabIndex = 10;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = false;
@@ -232,31 +226,31 @@
             // 
             // btnReset
             // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(9)))), ((int)(((byte)(34)))));
-            this.btnReset.FlatAppearance.BorderSize = 2;
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReset.Location = new System.Drawing.Point(617, 438);
+            this.btnReset.Location = new System.Drawing.Point(806, 388);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(125, 53);
+            this.btnReset.Size = new System.Drawing.Size(130, 60);
             this.btnReset.TabIndex = 11;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnRun
             // 
-            this.btnRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(9)))), ((int)(((byte)(34)))));
-            this.btnRun.FlatAppearance.BorderSize = 2;
+            this.btnRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(37)))));
+            this.btnRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
             this.btnRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRun.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRun.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRun.Location = new System.Drawing.Point(385, 438);
+            this.btnRun.Location = new System.Drawing.Point(806, 329);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(125, 53);
+            this.btnRun.Size = new System.Drawing.Size(130, 60);
             this.btnRun.TabIndex = 11;
-            this.btnRun.Text = "Run";
+            this.btnRun.Text = "RUN";
             this.btnRun.UseVisualStyleBackColor = false;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
@@ -275,7 +269,7 @@
             this.e.BackColor = System.Drawing.Color.Transparent;
             this.e.Font = new System.Drawing.Font("Roboto", 18F);
             this.e.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.e.Location = new System.Drawing.Point(601, 224);
+            this.e.Location = new System.Drawing.Point(601, 250);
             this.e.Name = "e";
             this.e.Size = new System.Drawing.Size(26, 29);
             this.e.TabIndex = 12;
@@ -287,7 +281,7 @@
             this.m.BackColor = System.Drawing.Color.Transparent;
             this.m.Font = new System.Drawing.Font("Roboto", 18F);
             this.m.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.m.Location = new System.Drawing.Point(275, 224);
+            this.m.Location = new System.Drawing.Point(275, 250);
             this.m.Name = "m";
             this.m.Size = new System.Drawing.Size(34, 29);
             this.m.TabIndex = 12;
@@ -296,28 +290,53 @@
             // txtAddress
             // 
             this.txtAddress.AutoSize = true;
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(278, 146);
+            this.txtAddress.BackColor = System.Drawing.Color.Transparent;
+            this.txtAddress.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtAddress.Location = new System.Drawing.Point(310, 136);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(79, 29);
+            this.txtAddress.Size = new System.Drawing.Size(77, 29);
             this.txtAddress.TabIndex = 15;
             this.txtAddress.Text = "label2";
+            this.txtAddress.Visible = false;
             // 
             // eOutput
             // 
-            this.eOutput.Location = new System.Drawing.Point(633, 224);
+            this.eOutput.Location = new System.Drawing.Point(633, 246);
             this.eOutput.Multiline = true;
             this.eOutput.Name = "eOutput";
-            this.eOutput.Size = new System.Drawing.Size(239, 36);
+            this.eOutput.Size = new System.Drawing.Size(170, 40);
             this.eOutput.TabIndex = 16;
             // 
             // mOutput
             // 
-            this.mOutput.Location = new System.Drawing.Point(315, 224);
+            this.mOutput.Location = new System.Drawing.Point(315, 246);
             this.mOutput.Multiline = true;
             this.mOutput.Name = "mOutput";
-            this.mOutput.Size = new System.Drawing.Size(239, 40);
+            this.mOutput.Size = new System.Drawing.Size(168, 40);
             this.mOutput.TabIndex = 17;
+            // 
+            // lbVersion
+            // 
+            this.lbVersion.AutoSize = true;
+            this.lbVersion.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersion.ForeColor = System.Drawing.Color.White;
+            this.lbVersion.Location = new System.Drawing.Point(108, 54);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(48, 24);
+            this.lbVersion.TabIndex = 7;
+            this.lbVersion.Text = "V1.0.0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(56, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 38);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "CrypTun ®";
             // 
             // Form2
             // 
@@ -357,7 +376,6 @@
         #endregion
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbType;
@@ -375,5 +393,7 @@
         private System.Windows.Forms.Label txtAddress;
         private System.Windows.Forms.TextBox eOutput;
         private System.Windows.Forms.TextBox mOutput;
+        private System.Windows.Forms.Label lbVersion;
+        private System.Windows.Forms.Label label1;
     }
 }

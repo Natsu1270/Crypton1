@@ -36,6 +36,8 @@
             this.lbType = new System.Windows.Forms.Label();
             this.btnInput = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbVersion = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnEncrypt = new System.Windows.Forms.Button();
@@ -48,8 +50,7 @@
             this.txtAddress = new System.Windows.Forms.Label();
             this.eOutput = new System.Windows.Forms.TextBox();
             this.mOutput = new System.Windows.Forms.TextBox();
-            this.lbVersion = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,7 +127,7 @@
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbType.Location = new System.Drawing.Point(526, 13);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(86, 42);
+            this.lbType.Size = new System.Drawing.Size(84, 42);
             this.lbType.TabIndex = 4;
             this.lbType.Text = "RSA";
             // 
@@ -161,6 +162,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 530);
             this.panel2.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(56, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 37);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "CrypTun ®";
+            // 
+            // lbVersion
+            // 
+            this.lbVersion.AutoSize = true;
+            this.lbVersion.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVersion.ForeColor = System.Drawing.Color.White;
+            this.lbVersion.Location = new System.Drawing.Point(108, 54);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(48, 24);
+            this.lbVersion.TabIndex = 7;
+            this.lbVersion.Text = "V1.0.0";
             // 
             // button2
             // 
@@ -295,7 +318,7 @@
             this.txtAddress.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtAddress.Location = new System.Drawing.Point(310, 136);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(77, 29);
+            this.txtAddress.Size = new System.Drawing.Size(79, 29);
             this.txtAddress.TabIndex = 15;
             this.txtAddress.Text = "label2";
             this.txtAddress.Visible = false;
@@ -316,27 +339,12 @@
             this.mOutput.Size = new System.Drawing.Size(168, 40);
             this.mOutput.TabIndex = 17;
             // 
-            // lbVersion
+            // progressBar1
             // 
-            this.lbVersion.AutoSize = true;
-            this.lbVersion.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVersion.ForeColor = System.Drawing.Color.White;
-            this.lbVersion.Location = new System.Drawing.Point(108, 54);
-            this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(48, 24);
-            this.lbVersion.TabIndex = 7;
-            this.lbVersion.Text = "V1.0.0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(56, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 38);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "CrypTun ®";
+            this.progressBar1.Location = new System.Drawing.Point(315, 424);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(267, 23);
+            this.progressBar1.TabIndex = 18;
             // 
             // Form2
             // 
@@ -345,6 +353,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 530);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.mOutput);
             this.Controls.Add(this.eOutput);
             this.Controls.Add(this.txtAddress);
@@ -395,5 +404,6 @@
         private System.Windows.Forms.TextBox mOutput;
         private System.Windows.Forms.Label lbVersion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

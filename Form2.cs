@@ -133,12 +133,37 @@ namespace Crypton1
         }
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            /*
-            generateKeys();
-            //mOutput.Text = (publicKey.Exponent).ToString();
-            Convert.ToBase64String(publicKey.P);
-            */
-            
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            {
+                RSAParameters publicKey = RSA.ExportParameters(false);
+                RSAParameters privateKey = RSA.ExportParameters(true);
+
+
+                using (XmlWriter writer = XmlWriter.Create(@"D:\UnitTest\RSA\publicKey.xml"))
+                {
+                    writer.WriteStartElement("RSAKeyValue");
+                    writer.WriteElementString("Modulus", Convert.ToBase64String(publicKey.Modulus));
+                    writer.WriteElementString("Exponent", Convert.ToBase64String(publicKey.Exponent));
+                    writer.WriteEndElement();
+                    writer.Flush();
+                }
+
+                using (XmlWriter writer = XmlWriter.Create(@"D:\UnitTest\RSA\privateKey.xml"))
+                {
+                    writer.WriteStartElement("RSAKeyValue");
+                    writer.WriteElementString("Modulus", Convert.ToBase64String(privateKey.Modulus));
+                    writer.WriteElementString("Exponent", Convert.ToBase64String(privateKey.Exponent));
+                    writer.WriteElementString("P", Convert.ToBase64String(privateKey.P));
+                    writer.WriteElementString("Q", Convert.ToBase64String(privateKey.Q));
+                    writer.WriteElementString("DP", Convert.ToBase64String(privateKey.DP));
+                    writer.WriteElementString("DQ", Convert.ToBase64String(privateKey.DQ));
+                    writer.WriteElementString("InverseQ", Convert.ToBase64String(privateKey.InverseQ));
+                    writer.WriteElementString("D", Convert.ToBase64String(privateKey.D));
+                    writer.WriteEndElement();
+                    writer.Flush();
+                }
+            }
+
         }
 
         private void btnOpenKey_Click(object sender, EventArgs e)
@@ -153,7 +178,15 @@ namespace Crypton1
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-                    RSAEncrypt(fileResult.Text, txtAddress.Text);
+            if (typeCryp == btnEncrypt.Text)
+            {
+                RSAEncrypt(fileResult.Text, txtAddress.Text);
+            }
+            else
+            {
+                RSADecrypt(fileResult.Text, txtAddress.Text);
+            }
+
         }
 
 
@@ -169,32 +202,6 @@ namespace Crypton1
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
             eOutput.Text = xnList.InnerText;
 
-            //using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
-            //{
-            //    RSAParameters x = RSA.ExportParameters(false);
-            //    if (x.D != null)
-            //    {
-            //        mOutput.Text = "1";
-            //    }
-            //    if (x.DP != null)
-            //    {
-            //        mOutput.Text = "1";
-            //    }
-            //    if (x.DQ != null)
-            //    {
-            //        mOutput.Text = "1";
-            //    }
-            //    if (x.InverseQ != null)
-            //    {
-            //        mOutput.Text = "1";
-            //    }
-            //    if (x.Exponent != null)
-            //    {
-            //        mOutput.Text = ;
-            //    }
-
-            //}
-
             byte[] byteArrayPlain = File.ReadAllBytes(plainFileName);
             byte[] encryptedData;
             RSAParameters RSAKeyInfo = new RSAParameters();
@@ -203,18 +210,47 @@ namespace Crypton1
 
             using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
             {
-
-                //Import the RSA Key information. This only needs
-                //toinclude the public key information.
                 RSA.ImportParameters(RSAKeyInfo);
-
-                //Encrypt the passed byte array and specify OAEP padding.  
-                //OAEP padding is only available on Microsoft Windows XP or
-                //later.  
-                encryptedData = RSA.Encrypt(byteArrayPlain, true);
+                encryptedData = RSA.Encrypt(byteArrayPlain, false);
             }
             string encryptedString = Convert.ToBase64String(encryptedData);
-            System.IO.File.WriteAllText(@"D:\test.txt", encryptedString);
+            System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\encrypted.txt", encryptedData);
+        }
+
+        public void RSADecrypt(string keyFileName, string cypherFileName)
+
+        {
+            //Get private key
+            RSAParameters RSAKeyInfo = new RSAParameters();
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(File.ReadAllText(keyFileName));
+            XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
+            RSAKeyInfo.Modulus = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
+            RSAKeyInfo.Exponent = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/P");
+            RSAKeyInfo.P = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/Q");
+            RSAKeyInfo.Q = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/DP");
+            RSAKeyInfo.DP = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/DQ");
+            RSAKeyInfo.DQ = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/InverseQ");
+            RSAKeyInfo.InverseQ = Convert.FromBase64String(xnList.InnerText);
+            xnList = xml.SelectSingleNode("/RSAKeyValue/D");
+            RSAKeyInfo.D = Convert.FromBase64String(xnList.InnerText);
+
+            byte[] byteArrayCipher = File.ReadAllBytes(cypherFileName);
+            byte[] decryptedData;
+
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            {
+                RSA.ImportParameters(RSAKeyInfo);
+                decryptedData = RSA.Decrypt(byteArrayCipher, false);
+            }
+            string decryptedString = Convert.ToBase64String(decryptedData);
+            System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\decrypted.txt", decryptedData);
         }
     }
 }

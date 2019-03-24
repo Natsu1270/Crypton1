@@ -88,6 +88,7 @@ namespace Crypton1
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string strfilename = openFileDialog1.FileName;
+                txtAddress.Visible = true;
                 txtAddress.Text = strfilename;
             }
 

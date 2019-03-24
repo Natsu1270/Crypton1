@@ -21,15 +21,11 @@ namespace Crypton1
         public Form2()
         {
             InitializeComponent();
-
         }
 
         Point lastClick;
         String typeCryp = "";
-        public void setLbType(String type)
-        {
-            this.lbType.Text = type;
-        }
+        
 
         public void clearAdd()
         {
@@ -97,12 +93,6 @@ namespace Crypton1
             
         }
 
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
-        
 
         public void disableCreatekey(bool t)
         {
@@ -163,17 +153,7 @@ namespace Crypton1
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            if (lbType.Text.ToString() == "RSA")
-            {
-                if (typeCryp == "Encrypt")
-                {
                     RSAEncrypt(fileResult.Text, txtAddress.Text);
-                }
-                else
-                {
-                    
-                }
-            }
         }
 
 
@@ -210,10 +190,6 @@ namespace Crypton1
             string encryptedString = Encoding.ASCII.GetString(encryptedData);
             System.IO.File.WriteAllText("D:\test.txt", encryptedString);
         }
-
-
-        
-
     }
 }
 

@@ -31,8 +31,10 @@ namespace Crypton1
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         Point lastClick;
-        Form2 f2 = new Form2();
-        Form3 f3 = new Form3();
+        Form2 rsaForm = new Form2();
+        Form3 hashForm = new Form3();
+        Form4 desForm = new Form4();
+        Form5 aesForm = new Form5();
 
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -80,12 +82,10 @@ namespace Crypton1
             }
         }
 
-        private void gotoSection(string type)
+        private void gotoSection(Form form)
         {
             this.Hide();
-            f2.setLbType(type);
-            f2.clearAdd();
-            f2.ShowDialog();
+            form.ShowDialog();
             try
             {
                 this.Show();
@@ -97,34 +97,24 @@ namespace Crypton1
         }
         private void btnDES_Click(object sender, EventArgs e)
         {
-            gotoSection(btnDES.Text.ToString());
+            gotoSection(desForm);
         }
 
         private void btnRSA_Click(object sender, EventArgs e)
         {
-            gotoSection(btnRSA.Text.ToString());
+            gotoSection(rsaForm);
 
         }
 
         private void btnXXX_Click(object sender, EventArgs e)
         {
-            gotoSection(btnXXX.Text.ToString());
+            gotoSection(aesForm);
 
         }
         private void btnHash_Click(object sender, EventArgs e)
         {
-           
-            this.Hide();
-            f3.setLbType(btnHash.Text.ToString());
-            f3.ShowDialog();
-            try
-            {
-                this.Show();
-            }
-            catch (ObjectDisposedException error)
-            {
-                Application.Exit();
-            }
+
+            gotoSection(hashForm);
 
         }
         private void label1_Click(object sender, EventArgs e)

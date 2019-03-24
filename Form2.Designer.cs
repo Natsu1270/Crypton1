@@ -136,9 +136,9 @@
             this.lbType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbType.Location = new System.Drawing.Point(526, 13);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(101, 42);
+            this.lbType.Size = new System.Drawing.Size(86, 42);
             this.lbType.TabIndex = 4;
-            this.lbType.Text = "TYPE";
+            this.lbType.Text = "RSA";
             // 
             // btnInput
             // 

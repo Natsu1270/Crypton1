@@ -25,7 +25,7 @@ namespace Crypton1
 
         Point lastClick;
         String typeCryp = "";
-        
+
 
         public void clearAdd()
         {
@@ -90,7 +90,7 @@ namespace Crypton1
                 string strfilename = openFileDialog1.FileName;
                 txtAddress.Text = strfilename;
             }
-            
+
         }
 
 
@@ -129,7 +129,7 @@ namespace Crypton1
 
         private void btnCreateKey_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void btnGenerate_Click(object sender, EventArgs e)
         {

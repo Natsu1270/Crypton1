@@ -218,15 +218,19 @@ namespace Crypton1
                 byte[] binEncrypt = new byte[maxBytesCanEncrypted];
                 while (len < byteArrayPlain.Length)
                 {
-                    int x = byteArrayPlain.Length - len;
-                    if (x >= maxBytesCanEncrypted)
+                    if (byteArrayPlain.Length - len > maxBytesCanEncrypted)
                     {
-                        x = maxBytesCanEncrypted;
+                        Array.Copy(byteArrayPlain, len, binData, 0, maxBytesCanEncrypted);
+                        binEncrypt = RSA.Encrypt(binData, false);
+                        System.Buffer.BlockCopy(binEncrypt, 0, encryptedData, 0, maxBytesCanEncrypted);
                     }
-                    Array.Copy(byteArrayPlain, len, binData, 0, x);
-  
-                    binEncrypt = RSA.Encrypt(binData, false);
-                    System.Buffer.BlockCopy(binEncrypt, 0, encryptedData, 0, maxBytesCanEncrypted);
+                    else
+                    {
+                        Array.Copy(byteArrayPlain, len, binData, 0, byteArrayPlain.Length - len);
+                        binEncrypt = RSA.Encrypt(binData, false);
+                        System.Buffer.BlockCopy(binEncrypt, 0, encryptedData, 0, byteArrayPlain.Length - len);
+                    }
+                        
                     len += maxBytesCanEncrypted;
                 }
                
@@ -271,15 +275,18 @@ namespace Crypton1
                 byte[] binDecrypt = new byte[maxBytesCanEncrypted];
                 while (len < byteArrayCipher.Length)
                 {
-                    int x = byteArrayCipher.Length - len;
-                    if (x >= maxBytesCanEncrypted)
+                    if (byteArrayCipher.Length - len > maxBytesCanEncrypted)
                     {
-                        x = maxBytesCanEncrypted;
+                        Array.Copy(byteArrayCipher, len, binData, 0, maxBytesCanEncrypted);
+                        binDecrypt = RSA.Decrypt(binData, false);
+                        System.Buffer.BlockCopy(binDecrypt, 0, decryptedData, 0, maxBytesCanEncrypted);
                     }
-                    Array.Copy(byteArrayCipher, len, binData, 0, x);
-
-                    binDecrypt = RSA.Decrypt(binData, false);
-                    System.Buffer.BlockCopy(binDecrypt, 0, decryptedData, 0, maxBytesCanEncrypted);
+                    else
+                    {
+                        Array.Copy(byteArrayCipher, len, binData, 0, byteArrayCipher.Length - len);
+                        binDecrypt = RSA.Decrypt(binData, false);
+                        System.Buffer.BlockCopy(binDecrypt, 0, decryptedData, 0, byteArrayCipher.Length - len);
+                    }
                     len += maxBytesCanEncrypted;
                 }
 

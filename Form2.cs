@@ -11,6 +11,7 @@ using System.Security;
 using System.Security.Cryptography;
 using System.IO;
 using System.Xml;
+using RSACryptography;
 
 namespace Crypton1
 {
@@ -142,6 +143,11 @@ namespace Crypton1
         }
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            /*
+            generateKeys();
+            //mOutput.Text = (publicKey.Exponent).ToString();
+            Convert.ToBase64String(publicKey.P);
+            */
             
         }
 
@@ -169,6 +175,9 @@ namespace Crypton1
                 }
             }
         }
+
+
+
         public void RSAEncrypt(string keyFileName, string plainFileName)
 
         {
@@ -176,11 +185,38 @@ namespace Crypton1
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
             XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
-            this.mOutput.Text = xnList.InnerText;
+            mOutput.Text = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
             eOutput.Text = xnList.InnerText;
 
+            byte[] byteArrayPlain = Encoding.ASCII.GetBytes("123");
+            byte[] encryptedData;
+            RSAParameters RSAKeyInfo = new RSAParameters();
+            RSAKeyInfo.Modulus = Encoding.ASCII.GetBytes(mOutput.Text);
+            RSAKeyInfo.Exponent = Encoding.ASCII.GetBytes(eOutput.Text);
 
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            {
+
+                //Import the RSA Key information. This only needs
+                //toinclude the public key information.
+                RSA.ImportParameters(RSAKeyInfo);
+
+                //Encrypt the passed byte array and specify OAEP padding.  
+                //OAEP padding is only available on Microsoft Windows XP or
+                //later.  
+                encryptedData = RSA.Encrypt(byteArrayPlain, false);
+            }
+            string encryptedString = Encoding.ASCII.GetString(encryptedData);
+            System.IO.File.WriteAllText("D:\test.txt", encryptedString);
         }
+
+
+        
+
     }
 }
+
+
+
+

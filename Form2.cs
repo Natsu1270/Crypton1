@@ -181,7 +181,7 @@ namespace Crypton1
         public void RSAEncrypt(string keyFileName, string plainFileName)
 
         {
-            // Get public key
+            //Get public key
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
             XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
@@ -189,11 +189,37 @@ namespace Crypton1
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
             eOutput.Text = xnList.InnerText;
 
-            byte[] byteArrayPlain = Encoding.ASCII.GetBytes("123");
+            //using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            //{
+            //    RSAParameters x = RSA.ExportParameters(false);
+            //    if (x.D != null)
+            //    {
+            //        mOutput.Text = "1";
+            //    }
+            //    if (x.DP != null)
+            //    {
+            //        mOutput.Text = "1";
+            //    }
+            //    if (x.DQ != null)
+            //    {
+            //        mOutput.Text = "1";
+            //    }
+            //    if (x.InverseQ != null)
+            //    {
+            //        mOutput.Text = "1";
+            //    }
+            //    if (x.Exponent != null)
+            //    {
+            //        mOutput.Text = ;
+            //    }
+
+            //}
+
+            byte[] byteArrayPlain = Encoding.Unicode.GetBytes("123");
             byte[] encryptedData;
             RSAParameters RSAKeyInfo = new RSAParameters();
-            RSAKeyInfo.Modulus = Encoding.ASCII.GetBytes(mOutput.Text);
-            RSAKeyInfo.Exponent = Encoding.ASCII.GetBytes(eOutput.Text);
+            RSAKeyInfo.Modulus = Convert.FromBase64String(mOutput.Text);
+            RSAKeyInfo.Exponent = Convert.FromBase64String(eOutput.Text);
 
             using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
             {
@@ -205,10 +231,10 @@ namespace Crypton1
                 //Encrypt the passed byte array and specify OAEP padding.  
                 //OAEP padding is only available on Microsoft Windows XP or
                 //later.  
-                encryptedData = RSA.Encrypt(byteArrayPlain, false);
+                encryptedData = RSA.Encrypt(byteArrayPlain, true);
             }
-            string encryptedString = Encoding.ASCII.GetString(encryptedData);
-            System.IO.File.WriteAllText("D:\test.txt", encryptedString);
+            string encryptedString = Convert.ToBase64String(encryptedData);
+            System.IO.File.WriteAllText(@"D:\test.txt", encryptedString);
         }
 
 

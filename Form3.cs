@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -90,6 +92,57 @@ namespace Crypton1
                 this.Top += e.Y - lastClick.Y;
 
             }
+        }
+
+
+        
+        static string CalculateMD5(string filename)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filename))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            if (txtAddress1.Text == "" && txtAddress2.Text == "")
+            {
+                MessageBox.Show("Please input a file to process encrypt/decrypt!", "No input file error!");
+                return;
+            }
+            if (txtAddress1.Text != "")
+            {
+                HashCode1.Text = CalculateMD5(txtAddress1.Text);
+            }
+            if (txtAddress2.Text != "")
+            {
+                HashCode2.Text = CalculateMD5(txtAddress2.Text);
+            }
+            if (txtAddress1.Text != "" && txtAddress2.Text != "")
+            {
+                if (string.Compare(txtAddress1.Text, txtAddress2.Text) == 0)
+                {
+                    HashCompare.Text = "The hashes are the same";
+                }
+                else
+                {
+                    HashCompare.Text = "The hashes are not same";
+                }
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            HashCompare.Text = "";
+            HashCode1.Text = "";
+            HashCode2.Text = "";
+            txtAddress1.Text = "";
+            txtAddress2.Text = "";
         }
     }
 }

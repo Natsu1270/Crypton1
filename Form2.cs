@@ -13,6 +13,7 @@ using System.IO;
 using System.Xml;
 using RSACryptography;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Crypton1
 {
@@ -260,8 +261,9 @@ namespace Crypton1
             ekey = xnList.InnerText;
         }
         public void RSAEncrypt(string keyFileName, string plainFileName)
-
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             //Get public key
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
@@ -283,11 +285,15 @@ namespace Crypton1
             }
             string encryptedString = Convert.ToBase64String(encryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\encrypted.txt", encryptedData);
+            stopwatch.Stop();
+            MessageBox.Show("Execution Time is " + stopwatch.Elapsed.ToString("mm\\:ss\\.ff"));
         }
 
         public void RSADecrypt(string keyFileName, string cypherFileName)
 
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             //Get private key
             RSAParameters RSAKeyInfo = new RSAParameters();
             XmlDocument xml = new XmlDocument();
@@ -319,6 +325,8 @@ namespace Crypton1
             }
             string decryptedString = Convert.ToBase64String(decryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\decrypted.txt", decryptedData);
+            stopwatch.Stop();
+            MessageBox.Show("Execution Time is " + stopwatch.Elapsed.ToString("mm\\:ss\\.ff"));
         }
 
         private void fileResult_Click(object sender, EventArgs e)
@@ -337,7 +345,15 @@ namespace Crypton1
             btn.FlatAppearance.BorderSize = 0;
         }
 
-       
+        private void txtAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

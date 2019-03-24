@@ -39,11 +39,19 @@ namespace Crypton1
 
         Point lastClick;
         String typeCryp = "";
-
+        String ekey = "";
+        String mkey="";
+        String time = "";
+        //Form keyGenDialog=new Dia
 
         public void clearAdd()
         {
             this.txtAddress.Text = "";
+        }
+
+        public void setKeyFile(String file)
+        {
+            this.fileResult.Text = file;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -180,7 +188,7 @@ namespace Crypton1
                     writer.WriteEndElement();
                     writer.Flush();
                 }
-
+                RSAGetPublicKey(@"D:\UnitTest\RSA\publicKey.xml");
                 using (XmlWriter writer = XmlWriter.Create(@"D:\UnitTest\RSA\privateKey.xml"))
                 {
                     writer.WriteStartElement("RSAKeyValue");
@@ -196,6 +204,7 @@ namespace Crypton1
                     writer.Flush();
                 }
             }
+                Form6.ShowGenDialog(ekey,mkey);
 
         }
 
@@ -233,11 +242,13 @@ namespace Crypton1
             if (typeCryp == btnEncrypt.Text)
             {
                 RSAEncrypt(fileResult.Text, txtAddress.Text);
+
             }
             else
             {
                 RSADecrypt(fileResult.Text, txtAddress.Text);
             }
+            ResultForm.ShowGenDialog(time, @"D:\UnitTest\RSA\");
 
         }
 
@@ -247,10 +258,10 @@ namespace Crypton1
             //Get public key
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
-            XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
-            mOutput.Text = xnList.InnerText;
+            XmlNode xnList = xml.SelectSingleNode(" / RSAKeyValue/Modulus");
+            mkey = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
-            eOutput.Text = xnList.InnerText;
+            ekey = xnList.InnerText;
         }
         public void RSAEncrypt(string keyFileName, string plainFileName)
         {
@@ -260,15 +271,15 @@ namespace Crypton1
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
             XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
-            mOutput.Text = xnList.InnerText;
+            mkey = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
-            eOutput.Text = xnList.InnerText;
+            ekey = xnList.InnerText;
 
             byte[] byteArrayPlain = File.ReadAllBytes(plainFileName);
             byte[] encryptedData;
             RSAParameters RSAKeyInfo = new RSAParameters();
-            RSAKeyInfo.Modulus = Convert.FromBase64String(mOutput.Text);
-            RSAKeyInfo.Exponent = Convert.FromBase64String(eOutput.Text);
+            RSAKeyInfo.Modulus = Convert.FromBase64String(mkey);
+            RSAKeyInfo.Exponent = Convert.FromBase64String(ekey);
 
             using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
             {
@@ -278,7 +289,8 @@ namespace Crypton1
             string encryptedString = Convert.ToBase64String(encryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\encrypted.txt", encryptedData);
             stopwatch.Stop();
-            MessageBox.Show("Execution Time is " + stopwatch.Elapsed.ToString("mm\\:ss\\.ff"));
+            //MessageBox.Show();
+            time = stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
         }
 
         public void RSADecrypt(string keyFileName, string cypherFileName)
@@ -318,7 +330,7 @@ namespace Crypton1
             string decryptedString = Convert.ToBase64String(decryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\decrypted.txt", decryptedData);
             stopwatch.Stop();
-            MessageBox.Show("Execution Time is " + stopwatch.Elapsed.ToString("mm\\:ss\\.ff"));
+            time=stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
         }
 
         private void fileResult_Click(object sender, EventArgs e)

@@ -38,19 +38,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.fileResult = new System.Windows.Forms.Label();
-            this.e = new System.Windows.Forms.Label();
-            this.m = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.eOutput = new System.Windows.Forms.Label();
-            this.mOutput = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,22 +180,6 @@
             this.lbVersion.TabIndex = 7;
             this.lbVersion.Text = "V1.0.0";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(0, 304);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 100);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "OPEN KEY FILE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnOpenKey_Click);
-            // 
             // btnGenerate
             // 
             this.btnGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
@@ -302,30 +281,6 @@
             this.fileResult.Visible = false;
             this.fileResult.Click += new System.EventHandler(this.fileResult_Click);
             // 
-            // e
-            // 
-            this.e.AutoSize = true;
-            this.e.BackColor = System.Drawing.Color.Transparent;
-            this.e.Font = new System.Drawing.Font("Roboto", 18F);
-            this.e.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.e.Location = new System.Drawing.Point(692, 203);
-            this.e.Name = "e";
-            this.e.Size = new System.Drawing.Size(26, 29);
-            this.e.TabIndex = 12;
-            this.e.Text = "e";
-            // 
-            // m
-            // 
-            this.m.AutoSize = true;
-            this.m.BackColor = System.Drawing.Color.Transparent;
-            this.m.Font = new System.Drawing.Font("Roboto", 18F);
-            this.m.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.m.Location = new System.Drawing.Point(379, 203);
-            this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(34, 29);
-            this.m.TabIndex = 12;
-            this.m.Text = "m";
-            // 
             // txtAddress
             // 
             this.txtAddress.AutoSize = true;
@@ -339,32 +294,21 @@
             this.txtAddress.Text = "____";
             this.txtAddress.Visible = false;
             // 
-            // progressBar1
+            // button2
             // 
-            this.progressBar1.Location = new System.Drawing.Point(315, 424);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(267, 23);
-            this.progressBar1.TabIndex = 18;
-            // 
-            // eOutput
-            // 
-            this.eOutput.AutoSize = true;
-            this.eOutput.BackColor = System.Drawing.Color.Transparent;
-            this.eOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eOutput.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.eOutput.Location = new System.Drawing.Point(682, 272);
-            this.eOutput.Name = "eOutput";
-            this.eOutput.Size = new System.Drawing.Size(49, 13);
-            this.eOutput.TabIndex = 19;
-            this.eOutput.Text = "_______";
-            // 
-            // mOutput
-            // 
-            this.mOutput.Location = new System.Drawing.Point(315, 246);
-            this.mOutput.Multiline = true;
-            this.mOutput.Name = "mOutput";
-            this.mOutput.Size = new System.Drawing.Size(168, 40);
-            this.mOutput.TabIndex = 17;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(91)))), ((int)(((byte)(150)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Roboto Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(0, 304);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(234, 100);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "OPEN KEY FILE";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnOpenKey_Click);
             // 
             // Form2
             // 
@@ -373,12 +317,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 530);
-            this.Controls.Add(this.eOutput);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.mOutput);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.m);
-            this.Controls.Add(this.e);
             this.Controls.Add(this.fileResult);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.btnReset);
@@ -415,15 +354,10 @@
         private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label fileResult;
-        private System.Windows.Forms.Label e;
-        private System.Windows.Forms.Label m;
         private System.Windows.Forms.Label txtAddress;
         private System.Windows.Forms.Label lbVersion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label eOutput;
-        private System.Windows.Forms.TextBox mOutput;
+        private System.Windows.Forms.Button button2;
     }
 }

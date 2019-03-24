@@ -38,11 +38,18 @@ namespace Crypton1
 
         Point lastClick;
         String typeCryp = "";
-
+        String ekey = "";
+        String mkey="";
+        //Form keyGenDialog=new Dia
 
         public void clearAdd()
         {
             this.txtAddress.Text = "";
+        }
+
+        public void setKeyFile(String file)
+        {
+            this.fileResult.Text = file;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -179,7 +186,7 @@ namespace Crypton1
                     writer.WriteEndElement();
                     writer.Flush();
                 }
-
+                RSAGetPublicKey(@"D:\UnitTest\RSA\publicKey.xml");
                 using (XmlWriter writer = XmlWriter.Create(@"D:\UnitTest\RSA\privateKey.xml"))
                 {
                     writer.WriteStartElement("RSAKeyValue");
@@ -195,6 +202,7 @@ namespace Crypton1
                     writer.Flush();
                 }
             }
+                Form6.ShowGenDialog(ekey,mkey);
 
         }
 
@@ -247,9 +255,9 @@ namespace Crypton1
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
             XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
-            mOutput.Text = xnList.InnerText;
+            mkey = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
-            eOutput.Text = xnList.InnerText;
+            ekey = xnList.InnerText;
         }
         public void RSAEncrypt(string keyFileName, string plainFileName)
 
@@ -258,15 +266,15 @@ namespace Crypton1
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
             XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
-            mOutput.Text = xnList.InnerText;
+            mkey = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
-            eOutput.Text = xnList.InnerText;
+            ekey = xnList.InnerText;
 
             byte[] byteArrayPlain = File.ReadAllBytes(plainFileName);
             byte[] encryptedData;
             RSAParameters RSAKeyInfo = new RSAParameters();
-            RSAKeyInfo.Modulus = Convert.FromBase64String(mOutput.Text);
-            RSAKeyInfo.Exponent = Convert.FromBase64String(eOutput.Text);
+            RSAKeyInfo.Modulus = Convert.FromBase64String(mkey);
+            RSAKeyInfo.Exponent = Convert.FromBase64String(ekey);
 
             using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
             {

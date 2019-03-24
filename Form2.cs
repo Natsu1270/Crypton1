@@ -195,7 +195,7 @@ namespace Crypton1
 
             //}
 
-            byte[] byteArrayPlain = Encoding.Unicode.GetBytes("123");
+            byte[] byteArrayPlain = File.ReadAllBytes(plainFileName);
             byte[] encryptedData;
             RSAParameters RSAKeyInfo = new RSAParameters();
             RSAKeyInfo.Modulus = Convert.FromBase64String(mOutput.Text);

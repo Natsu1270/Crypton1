@@ -41,6 +41,7 @@ namespace Crypton1
         String typeCryp = "";
         String ekey = "";
         String mkey="";
+        String time = "";
         //Form keyGenDialog=new Dia
 
         public void clearAdd()
@@ -241,11 +242,13 @@ namespace Crypton1
             if (typeCryp == btnEncrypt.Text)
             {
                 RSAEncrypt(fileResult.Text, txtAddress.Text);
+
             }
             else
             {
                 RSADecrypt(fileResult.Text, txtAddress.Text);
             }
+            ResultForm.ShowGenDialog(time, @"D:\UnitTest\RSA\");
 
         }
 
@@ -255,7 +258,7 @@ namespace Crypton1
             //Get public key
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(File.ReadAllText(keyFileName));
-            XmlNode xnList = xml.SelectSingleNode("/RSAKeyValue/Modulus");
+            XmlNode xnList = xml.SelectSingleNode(" / RSAKeyValue/Modulus");
             mkey = xnList.InnerText;
             xnList = xml.SelectSingleNode("/RSAKeyValue/Exponent");
             ekey = xnList.InnerText;
@@ -286,7 +289,8 @@ namespace Crypton1
             string encryptedString = Convert.ToBase64String(encryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\encrypted.txt", encryptedData);
             stopwatch.Stop();
-            MessageBox.Show("Execution Time is " + stopwatch.Elapsed.ToString("mm\\:ss\\.ff"));
+            //MessageBox.Show();
+            time = stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
         }
 
         public void RSADecrypt(string keyFileName, string cypherFileName)
@@ -326,7 +330,7 @@ namespace Crypton1
             string decryptedString = Convert.ToBase64String(decryptedData);
             System.IO.File.WriteAllBytes(@"D:\UnitTest\RSA\decrypted.txt", decryptedData);
             stopwatch.Stop();
-            MessageBox.Show("Execution Time is " + stopwatch.Elapsed.ToString("mm\\:ss\\.ff"));
+            time=stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
         }
 
         private void fileResult_Click(object sender, EventArgs e)

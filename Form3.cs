@@ -144,5 +144,10 @@ namespace Crypton1
             txtAddress1.Text = "";
             txtAddress2.Text = "";
         }
+
+        private void HashCode2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

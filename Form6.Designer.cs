@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -119,10 +119,10 @@
             this.mKey.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.mKey.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(38)))), ((int)(((byte)(157)))));
             this.mKey.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.mKey.BorderRadius = 5;
+            this.mKey.BorderRadius = 20;
             this.mKey.BorderThickness = 2;
             this.mKey.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.mKey.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mKey.DefaultFont = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mKey.DefaultText = "";
             this.mKey.FillColor = System.Drawing.Color.White;
             this.mKey.HideSelection = true;
@@ -137,7 +137,7 @@
             this.mKey.Modified = false;
             this.mKey.Name = "mKey";
             this.mKey.PasswordChar = '\0';
-            this.mKey.ReadOnly = false;
+            this.mKey.ReadOnly = true;
             this.mKey.SelectedText = "";
             this.mKey.SelectionLength = 0;
             this.mKey.SelectionStart = 0;
@@ -162,16 +162,16 @@
             this.eKey.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.eKey.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(38)))), ((int)(((byte)(157)))));
             this.eKey.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.eKey.BorderRadius = 5;
+            this.eKey.BorderRadius = 10;
             this.eKey.BorderThickness = 2;
             this.eKey.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.eKey.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eKey.DefaultFont = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eKey.DefaultText = "";
             this.eKey.FillColor = System.Drawing.Color.White;
             this.eKey.HideSelection = true;
             this.eKey.IconLeft = null;
             this.eKey.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.eKey.IconPadding = 10;
+            this.eKey.IconPadding = 0;
             this.eKey.IconRight = null;
             this.eKey.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.eKey.Location = new System.Drawing.Point(349, 168);
@@ -180,7 +180,7 @@
             this.eKey.Modified = false;
             this.eKey.Name = "eKey";
             this.eKey.PasswordChar = '\0';
-            this.eKey.ReadOnly = false;
+            this.eKey.ReadOnly = true;
             this.eKey.SelectedText = "";
             this.eKey.SelectionLength = 0;
             this.eKey.SelectionStart = 0;
@@ -188,7 +188,7 @@
             this.eKey.Size = new System.Drawing.Size(200, 152);
             this.eKey.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Material;
             this.eKey.TabIndex = 4;
-            this.eKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.eKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.eKey.TextMarginLeft = 5;
             this.eKey.TextPlaceholder = "";
             this.eKey.UseSystemPasswordChar = false;
@@ -215,13 +215,13 @@
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.Location = new System.Drawing.Point(207, 332);
             this.bunifuButton1.Name = "bunifuButton1";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties1.BorderRadius = 1;
-            stateProperties1.BorderThickness = 1;
-            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties1.IconLeftImage = null;
-            stateProperties1.IconRightImage = null;
-            this.bunifuButton1.onHoverState = stateProperties1;
+            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.BorderRadius = 1;
+            stateProperties4.BorderThickness = 1;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.IconLeftImage = null;
+            stateProperties4.IconRightImage = null;
+            this.bunifuButton1.onHoverState = stateProperties4;
             this.bunifuButton1.Size = new System.Drawing.Size(164, 45);
             this.bunifuButton1.TabIndex = 5;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

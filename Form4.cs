@@ -206,7 +206,17 @@ namespace Crypton1
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-
+            DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
+            string sKey = File.ReadAllText(keyFileName, Encoding.UTF8);
+            DES.Key = ASCIIEncoding.ASCII.GetBytes(sKey);
+            DES.IV = ASCIIEncoding.ASCII.GetBytes(sKey);
+            FileStream fsread = new FileStream(cypherFileName, FileMode.Open, FileAccess.Read);
+            ICryptoTransform descrypt = DES.CreateDecryptor();
+            CryptoStream cryptostreamDecr = new CryptoStream(fsread, descrypt, CryptoStreamMode.Read);
+            StreamWriter fsDecrypted = new StreamWriter(@"D:\UnitTest\DES\decrypt");
+            fsDecrypted.Write(new StreamReader(cryptostreamDecr).ReadToEnd());
+            fsDecrypted.Flush();
+            fsDecrypted.Close();
             stopwatch.Stop();
             time = stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
         }

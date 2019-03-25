@@ -17,8 +17,7 @@ namespace Crypton1
         {
             InitializeComponent();
         }
-        private String path = @"D:\UnitTest\RSA";
-        
+        String path = @"D:\UnitTest\RSA\";
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,7 +27,7 @@ namespace Crypton1
             ResultForm res = new ResultForm();
             res.lbTime.Text = time;
             res.ShowDialog();
-            //this.path = path;
+            
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -42,11 +41,6 @@ namespace Crypton1
                 MessageBox.Show("An error has occured!");
                 return;
             }
-        }
-
-        internal static void ShowGenDialog(object time, string v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

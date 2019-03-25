@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.IO;
-using System.Diagnostics;
+
 
 namespace Crypton1
 {
@@ -29,7 +29,6 @@ namespace Crypton1
              int nHeightEllipse // width of ellipse
          );
         String typeCryp = "";
-        String time = "";
         public Form4()
         {
             InitializeComponent();
@@ -86,7 +85,6 @@ namespace Crypton1
         {
             DESCryptoServiceProvider desCrypto = (DESCryptoServiceProvider)DESCryptoServiceProvider.Create();
             key.Text = ASCIIEncoding.ASCII.GetString(desCrypto.Key);
-            System.IO.File.WriteAllText(@"D:\UnitTest\DES\Key.txt", key.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,37 +143,88 @@ namespace Crypton1
             disableAllBtn();
         }
 
-        private void btnRun_Click(object sender, EventArgs e)
-        {
-            if (!txtAddress.Visible)
-            {
-                MessageBox.Show("Please input a file to process encrypt/decrypt!", "No input file error!");
-                return;
-            }
-            else if (!fileResult.Visible)
-            {
-                MessageBox.Show("Please input a key file to process encrypt/decrypt!", "No key file error!");
-                return;
-            }
-            else if (Path.GetExtension(fileResult.Text.ToString()) != ".txt")
-            {
-                //MessageBox.Show(Path.GetExtension(fileResult.Text.ToString()));
-                MessageBox.Show("Wrong key extension!", "Extension error!");
-                return;
-            }
-            else if (typeCryp == "")
-            {
-                MessageBox.Show("Please choose encrypt/decrypt mode to process", "Mode error!");
-                return;
-            }
-            if (typeCryp == btnEncrypt.Text)
-            {
-                DESEncrypt(fileResult.Text, txtAddress.Text);
 
-            }
-            else
+        static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
+        {
+            // Check arguments.
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+            byte[] encrypted;
+
+            // Create an Aes object
+            // with the specified key and IV.
+            using (Aes aesAlg = Aes.Create())
             {
-                DESDecrypt(fileResult.Text, txtAddress.Text);
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                // Create an encryptor to perform the stream transform.
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                // Create the streams used for encryption.
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            //Write all data to the stream.
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            }
+
+
+            // Return the encrypted bytes from the memory stream.
+            return encrypted;
+
+        }
+
+        static string DecryptStringFromBytes_Aes(byte[] cipherText, byte[] Key, byte[] IV)
+        {
+            // Check arguments.
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+
+            // Declare the string used to hold
+            // the decrypted text.
+            string plaintext = null;
+
+            // Create an Aes object
+            // with the specified key and IV.
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                // Create a decryptor to perform the stream transform.
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                // Create the streams used for decryption.
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+
+                            // Read the decrypted bytes from the decrypting stream
+                            // and place them in a string.
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+
             }
             ResultForm.ShowGenDialog(time, @"D:\UnitTest\DES\");
 

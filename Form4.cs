@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-
+using System.IO;
+using System.Diagnostics;
 
 namespace Crypton1
 {
@@ -28,6 +29,7 @@ namespace Crypton1
              int nHeightEllipse // width of ellipse
          );
         String typeCryp = "";
+        String time = "";
         public Form4()
         {
             InitializeComponent();
@@ -141,6 +143,72 @@ namespace Crypton1
             fileResult.Visible = false;
             typeCryp = "";
             disableAllBtn();
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            if (!txtAddress.Visible)
+            {
+                MessageBox.Show("Please input a file to process encrypt/decrypt!", "No input file error!");
+                return;
+            }
+            else if (!fileResult.Visible)
+            {
+                MessageBox.Show("Please input a key file to process encrypt/decrypt!", "No key file error!");
+                return;
+            }
+            else if (Path.GetExtension(fileResult.Text.ToString()) != ".txt")
+            {
+                //MessageBox.Show(Path.GetExtension(fileResult.Text.ToString()));
+                MessageBox.Show("Wrong key extension!", "Extension error!");
+                return;
+            }
+            else if (typeCryp == "")
+            {
+                MessageBox.Show("Please choose encrypt/decrypt mode to process", "Mode error!");
+                return;
+            }
+            if (typeCryp == btnEncrypt.Text)
+            {
+                DESEncrypt(fileResult.Text, txtAddress.Text);
+
+            }
+            else
+            {
+                DESDecrypt(fileResult.Text, txtAddress.Text);
+            }
+            ResultForm.ShowGenDialog(time, @"D:\UnitTest\DES\");
+
+        }
+        public void DESEncrypt(string keyFileName, string plainFileName)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            FileStream fsInput = new FileStream(plainFileName, FileMode.Open, FileAccess.Read);
+            FileStream fsEncrypted = new FileStream(@"D:\UnitTest\DES\enryted", FileMode.Create, FileAccess.Write);
+            string sKey = File.ReadAllText(keyFileName, Encoding.UTF8);
+            DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
+            DES.Key = ASCIIEncoding.ASCII.GetBytes(sKey);
+            DES.IV = ASCIIEncoding.ASCII.GetBytes(sKey);
+            ICryptoTransform desencrypt = DES.CreateEncryptor();
+            CryptoStream cryptostream = new CryptoStream(fsEncrypted, desencrypt, CryptoStreamMode.Write);
+            byte[] bytearrayinput = new byte[fsInput.Length - 1];
+            fsInput.Read(bytearrayinput, 0, bytearrayinput.Length);
+            cryptostream.Write(bytearrayinput, 0, bytearrayinput.Length);
+            cryptostream.Close();
+            fsInput.Close();
+            fsEncrypted.Close();
+            stopwatch.Stop();
+            //MessageBox.Show();
+            time = stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
+        }
+        public void DESDecrypt(string keyFileName, string cypherFileName)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            stopwatch.Stop();
+            time = stopwatch.Elapsed.ToString("mm\\:ss\\.ff");
         }
     }
 }

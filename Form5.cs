@@ -78,28 +78,60 @@ namespace Crypton1
                 string strfilename = openFileDialog1.FileName;
                 txtAddress.Visible = true;
                 txtAddress.Text = strfilename;
+                string TextContent = File.ReadAllText(strfilename, Encoding.UTF8);
             }
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-
-            // Create the resource manager.
-            Assembly assembly = this.GetType().Assembly;
-
-            //ResFile.Strings -> <Namespace>.<ResourceFileName i.e. Strings.resx> 
-            ResourceManager resman = new ResourceManager(txtAddress.Text, assembly);
-
-            // Load the value of string value for Client
-            textBox1.Text = File.ReadAllText(txtAddress.Text, Encoding.UTF8);
+            string TextContent = File.ReadAllText(txtAddress.Text, Encoding.UTF8);
+            //textBox1.Text = EncryptStringToBytes_Aes(TextContent, );
         }
 
-     
 
 
-        // crypton section
 
-        //  Call this function to remove the key from memory after use for security
+        static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
+        {
+            // Check arguments.
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+            byte[] encrypted;
+
+            // Create an Aes object
+            // with the specified key and IV.
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                // Create an encryptor to perform the stream transform.
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                // Create the streams used for encryption.
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            //Write all data to the stream.
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            }
+
+
+            // Return the encrypted bytes from the memory stream.
+            return encrypted;
+
+        }
 
 
 

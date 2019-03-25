@@ -10,6 +10,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
+using System.Reflection;
 
 namespace Crypton1
 {
@@ -68,6 +70,31 @@ namespace Crypton1
             }
         }
 
+        private void btnInput_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string strfilename = openFileDialog1.FileName;
+                txtAddress.Visible = true;
+                txtAddress.Text = strfilename;
+            }
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+
+            // Create the resource manager.
+            Assembly assembly = this.GetType().Assembly;
+
+            //ResFile.Strings -> <Namespace>.<ResourceFileName i.e. Strings.resx> 
+            ResourceManager resman = new ResourceManager(txtAddress.Text, assembly);
+
+            // Load the value of string value for Client
+            textBox1.Text = File.ReadAllText(txtAddress.Text, Encoding.UTF8);
+        }
+
+     
 
 
         // crypton section
